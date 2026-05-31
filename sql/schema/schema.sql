@@ -1,5 +1,5 @@
 --
--- File generated with SQLiteStudio v3.4.21 on Sat May 30 09:18:45 2026
+-- File generated with SQLiteStudio v3.4.21 on Sun May 31 06:29:13 2026
 --
 -- Text encoding used: System
 --
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS audit_log (
 -- Table: categories
 CREATE TABLE IF NOT EXISTS categories (
     id            INTEGER PRIMARY KEY,
-    dictionary_id INTEGER REFERENCES dictionaries (id) ON DELETE CASCADE
+    dictionary_id INTEGER REFERENCES dictionaries (id) ON DELETE RESTRICT
                                                        ON UPDATE CASCADE
                           UNIQUE
                           NOT NULL
@@ -30,8 +30,10 @@ CREATE TABLE IF NOT EXISTS categories (
 
 -- Table: club_communities
 CREATE TABLE IF NOT EXISTS club_communities (
-    zip_id  INTEGER,
-    bfs_id  INTEGER,
+    zip_id  INTEGER REFERENCES communities (zip_id) ON DELETE NO ACTION
+                                                    ON UPDATE NO ACTION,
+    bfs_id  INTEGER REFERENCES communities (city) ON DELETE NO ACTION
+                                                  ON UPDATE NO ACTION,
     club_id INTEGER REFERENCES clubs (id) ON DELETE CASCADE
                                           ON UPDATE CASCADE,
     FOREIGN KEY (
@@ -47,7 +49,8 @@ CREATE TABLE IF NOT EXISTS club_communities (
 CREATE TABLE IF NOT EXISTS clubs (
     id       INTEGER PRIMARY KEY AUTOINCREMENT,
     ssv      TEXT,
-    name     TEXT    NOT NULL,
+    name     TEXT    NOT NULL
+                     UNIQUE,
     bfs_name TEXT
 );
 
@@ -75,8 +78,7 @@ CREATE TABLE IF NOT EXISTS communities (
 
 -- Table: competitive_groups
 CREATE TABLE IF NOT EXISTS competitive_groups (
-    id            INTEGER NOT NULL
-                          PRIMARY KEY AUTOINCREMENT,
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
     dictionary_id INTEGER REFERENCES dictionaries (id) ON DELETE CASCADE
                                                        ON UPDATE CASCADE
                           NOT NULL
@@ -87,7 +89,7 @@ CREATE TABLE IF NOT EXISTS competitive_groups (
 -- Table: contact_types
 CREATE TABLE IF NOT EXISTS contact_types (
     id            INTEGER PRIMARY KEY AUTOINCREMENT,
-    dictionary_id INTEGER REFERENCES dictionaries (id) ON DELETE CASCADE
+    dictionary_id INTEGER REFERENCES dictionaries (id) ON DELETE RESTRICT
                                                        ON UPDATE CASCADE
                           NOT NULL
                           UNIQUE
@@ -119,7 +121,9 @@ CREATE TABLE IF NOT EXISTS dictionary_languages (
                                                         ON UPDATE CASCADE
                            NOT NULL,
     lang          TEXT (2) REFERENCES languages (lang) ON DELETE CASCADE
-                                                       ON UPDATE CASCADE,
+                                                       ON UPDATE CASCADE
+                           DEFAULT en
+                           NOT NULL,
     name          TEXT,
     description   TEXT
 );
@@ -128,7 +132,7 @@ CREATE TABLE IF NOT EXISTS dictionary_languages (
 -- Table: disciplines
 CREATE TABLE IF NOT EXISTS disciplines (
     id            INTEGER PRIMARY KEY AUTOINCREMENT,
-    dictionary_id INTEGER REFERENCES dictionaries (id) ON DELETE CASCADE
+    dictionary_id INTEGER REFERENCES dictionaries (id) ON DELETE RESTRICT
                                                        ON UPDATE CASCADE
                           UNIQUE
                           NOT NULL
@@ -146,10 +150,11 @@ CREATE TABLE IF NOT EXISTS languages (
 -- Table: members
 CREATE TABLE IF NOT EXISTS members (
     id        INTEGER PRIMARY KEY AUTOINCREMENT,
-    person_id INTEGER REFERENCES people (id) ON DELETE CASCADE
+    person_id INTEGER REFERENCES people (id) ON DELETE RESTRICT
                                              ON UPDATE CASCADE,
-    club_id   INTEGER,
-    role_id   INTEGER REFERENCES person_roles (id) ON DELETE SET DEFAULT
+    club_id   INTEGER REFERENCES clubs (id) ON DELETE RESTRICT
+                                            ON UPDATE CASCADE,
+    role_id   INTEGER REFERENCES person_roles (id) ON DELETE RESTRICT
                                                    ON UPDATE CASCADE
                       DEFAULT (1),
     group_id  INTEGER REFERENCES competitive_groups (id) ON DELETE SET DEFAULT
@@ -172,7 +177,7 @@ CREATE TABLE IF NOT EXISTS people (
 -- Table: person_roles
 CREATE TABLE IF NOT EXISTS person_roles (
     id            INTEGER PRIMARY KEY,
-    dictionary_id INTEGER REFERENCES dictionaries (id) ON DELETE CASCADE
+    dictionary_id INTEGER REFERENCES dictionaries (id) ON DELETE RESTRICT
                                                        ON UPDATE CASCADE
                           NOT NULL
                           UNIQUE
@@ -183,12 +188,13 @@ CREATE TABLE IF NOT EXISTS person_roles (
 CREATE TABLE IF NOT EXISTS sections (
     id            INTEGER PRIMARY KEY AUTOINCREMENT,
     club_id       INTEGER NOT NULL
-                          REFERENCES clubs (id) ON UPDATE CASCADE,
-    discipline_id INTEGER REFERENCES disciplines (id) ON DELETE SET DEFAULT
+                          REFERENCES clubs (id) ON DELETE RESTRICT
+                                                ON UPDATE CASCADE,
+    discipline_id INTEGER REFERENCES disciplines (id) ON DELETE RESTRICT
                                                       ON UPDATE CASCADE
                           NOT NULL
                           DEFAULT (1),
-    category_id   INTEGER REFERENCES categories (id) ON DELETE SET DEFAULT
+    category_id   INTEGER REFERENCES categories (id) ON DELETE RESTRICT
                                                      ON UPDATE CASCADE
                           DEFAULT (4) 
 );
@@ -421,8 +427,8 @@ BEGIN
                               OLD.id,
                               'UPDATE',
                               datetime('now'),
-                              json_object('club_id', OLD.dictionary_id),
-                              json_object('club_id', NEW.dictionary_id) 
+                              json_object('club_id', OLD.club_id),
+                              json_object('club_id', NEW.club_id) 
                           );
 END;
 

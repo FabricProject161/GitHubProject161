@@ -1,33 +1,51 @@
-DELETE FROM dictionaries WHERE reference = 'categories';
+DELETE FROM dictionaries WHERE id = (SELECT category_id FROM dictionary_parameters WHERE expired IS NULL LIMIT 1);
 
-INSERT INTO dictionaries (reference) VALUES ('categories');
-INSERT INTO categories (dictionary_id) VALUES ((SELECT MAX(id) FROM dictionaries));
-INSERT INTO dictionary_languages (dictionary_id, lang, name, description) VALUES
-((SELECT MAX(id) FROM dictionaries), 'en', 'Lowest',  'Smaller clubs, less competition'),
-((SELECT MAX(id) FROM dictionaries), 'de', 'Tiefste', 'Kleinere Vereine, weniger Wettkampfbetrieb'),
-((SELECT MAX(id) FROM dictionaries), 'fr', 'La plus basse', 'Clubs plus petits, moins de compÈtition'),
-((SELECT MAX(id) FROM dictionaries), 'it', 'Pi˘ bassa', 'Club pi˘ piccoli, meno competizione');
+INSERT INTO dictionaries DEFAULT VALUES;
+UPDATE dictionaries SET parent_id = last_insert_rowid() WHERE id = last_insert_rowid();
+UPDATE dictionary_parameters SET category_id = last_insert_rowid();
 
-INSERT INTO dictionaries (reference) VALUES ('categories');
-INSERT INTO categories (dictionary_id) VALUES ((SELECT MAX(id) FROM dictionaries));
-INSERT INTO dictionary_languages (dictionary_id, lang, name, description) VALUES
-((SELECT MAX(id) FROM dictionaries), 'en', 'Middle',  'Solid, active clubs'),
-((SELECT MAX(id) FROM dictionaries), 'de', 'Mittlere', 'Solide, aktive Vereine'),
-((SELECT MAX(id) FROM dictionaries), 'fr', 'Moyenne', 'Clubs solides et actifs'),
-((SELECT MAX(id) FROM dictionaries), 'it', 'Media', 'Club solidi e attivi');
+INSERT INTO dictionary_translations (dictionary_id, lang, name, description)
+SELECT category_id, 'en', 'Category', 'Official performance and club classification maintained in the internal administration system of the Swiss Shooting Sports Federation (SSV)' FROM dictionary_parameters WHERE expired IS NULL UNION ALL
+SELECT category_id, 'de', 'Kategorie', 'Offizielle Leistungs‚Äë und Vereinsklassifikation, die im internen Verwaltungssystem des Schweizer Schiesssportverbands (SSV) gef√ºhrt wird' FROM dictionary_parameters WHERE expired IS NULL UNION ALL
+SELECT category_id, 'fr', 'Cat√©gorie', 'Classification officielle des performances et des soci√©t√©s, g√©r√©e dans le syst√®me administratif interne de la F√©d√©ration sportive suisse de tir (FST/SSV)' FROM dictionary_parameters WHERE expired IS NULL UNION ALL
+SELECT category_id, 'it', 'Categoria', 'Classificazione ufficiale delle prestazioni e delle societ√†, gestita nel sistema amministrativo interno della Federazione Svizzera di Tiro (FST/SSV)' FROM dictionary_parameters WHERE expired IS NULL;
 
-INSERT INTO dictionaries (reference) VALUES ('categories');
-INSERT INTO categories (dictionary_id) VALUES ((SELECT MAX(id) FROM dictionaries));
-INSERT INTO dictionary_languages (dictionary_id, lang, name, description) VALUES
-((SELECT MAX(id) FROM dictionaries), 'en', 'Strong',  'Above-average performance level'),
-((SELECT MAX(id) FROM dictionaries), 'de', 'Starke', '‹berdurchschnittliche Leistungsstufe'),
-((SELECT MAX(id) FROM dictionaries), 'fr', 'Forte', 'Niveau de performance supÈrieur ‡ la moyenne'),
-((SELECT MAX(id) FROM dictionaries), 'it', 'Forte', 'Livello di prestazione superiore alla media');
+CREATE TEMP TABLE temp_dictionaries (id INTEGER);
+INSERT INTO dictionaries (parent_id) SELECT category_id FROM dictionary_parameters WHERE expired IS NULL LIMIT 1;
+INSERT INTO temp_dictionaries VALUES (last_insert_rowid());
+INSERT INTO dictionary_translations (dictionary_id, lang, name, description) VALUES
+((SELECT id FROM temp_dictionaries), 'en', '1', 'Lowest - Smaller clubs, less competition'),
+((SELECT id FROM temp_dictionaries), 'de', '1', 'Tiefste - Kleinere Vereine, weniger Wettkampfbetrieb'),
+((SELECT id FROM temp_dictionaries), 'fr', '1', 'La plus basse - Clubs plus petits, moins de comp√©tition'),
+((SELECT id FROM temp_dictionaries), 'it', '1', 'Pi√π bassa - Club pi√π piccoli, meno competizione');
+DROP TABLE temp_dictionaries;
 
-INSERT INTO dictionaries (reference) VALUES ('categories');
-INSERT INTO categories (dictionary_id) VALUES ((SELECT MAX(id) FROM dictionaries));
-INSERT INTO dictionary_languages (dictionary_id, lang, name, description) VALUES
-((SELECT MAX(id) FROM dictionaries), 'en', 'Highest',  'Very strong, competition-tested clubs'),
-((SELECT MAX(id) FROM dictionaries), 'de', 'Hˆchste', 'Sehr starke, wettkampferprobte Vereine'),
-((SELECT MAX(id) FROM dictionaries), 'fr', 'La plus ÈlevÈe', 'Clubs trËs forts, ÈprouvÈs en compÈtition'),
-((SELECT MAX(id) FROM dictionaries), 'it', 'Pi˘ alta', 'Club molto forti, collaudati in competizione');
+CREATE TEMP TABLE temp_dictionaries (id INTEGER);
+INSERT INTO dictionaries (parent_id) SELECT category_id FROM dictionary_parameters WHERE expired IS NULL LIMIT 1;
+INSERT INTO temp_dictionaries VALUES (last_insert_rowid());
+INSERT INTO dictionary_translations (dictionary_id, lang, name, description) VALUES
+((SELECT id FROM temp_dictionaries), 'en', '2', 'Middle - Solid, active clubs'),
+((SELECT id FROM temp_dictionaries), 'de', '2', 'Mittlere - Solide, aktive Vereine'),
+((SELECT id FROM temp_dictionaries), 'fr', '2', 'Moyenne - Clubs solides et actifs'),
+((SELECT id FROM temp_dictionaries), 'it', '2', 'Media - Club solidi e attivi');
+DROP TABLE temp_dictionaries;
+
+CREATE TEMP TABLE temp_dictionaries (id INTEGER);
+INSERT INTO dictionaries (parent_id) SELECT category_id FROM dictionary_parameters WHERE expired IS NULL LIMIT 1;
+INSERT INTO temp_dictionaries VALUES (last_insert_rowid());
+INSERT INTO dictionary_translations (dictionary_id, lang, name, description) VALUES
+((SELECT id FROM temp_dictionaries), 'en', '3', 'Strong - Above-average performance level'),
+((SELECT id FROM temp_dictionaries), 'de', '3', 'Starke - √úberdurchschnittliche Leistungsstufe'),
+((SELECT id FROM temp_dictionaries), 'fr', '3', 'Forte - Niveau de performance sup√©rieur √† la moyenne'),
+((SELECT id FROM temp_dictionaries), 'it', '3', 'Forte - Livello di prestazione superiore alla media');
+DROP TABLE temp_dictionaries;
+
+CREATE TEMP TABLE temp_dictionaries (id INTEGER);
+INSERT INTO dictionaries (parent_id) SELECT category_id FROM dictionary_parameters WHERE expired IS NULL LIMIT 1;
+INSERT INTO temp_dictionaries VALUES (last_insert_rowid());
+INSERT INTO dictionary_translations (dictionary_id, lang, name, description) VALUES
+((SELECT id FROM temp_dictionaries), 'en', '4', 'Highest - Very strong, competition-tested clubs'),
+((SELECT id FROM temp_dictionaries), 'de', '4', 'H√∂chste - Sehr starke, wettkampferprobte Vereine'),
+((SELECT id FROM temp_dictionaries), 'fr', '4', 'La plus √©lev√©e - Clubs tr√®s forts, √©prouv√©s en comp√©tition'),
+((SELECT id FROM temp_dictionaries), 'it', '4', 'Pi√π alta - Club molto forti, collaudati in competizione');
+DROP TABLE temp_dictionaries;

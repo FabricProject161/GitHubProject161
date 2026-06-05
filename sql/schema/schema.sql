@@ -1,5 +1,5 @@
 --
--- File generated with SQLiteStudio v3.4.21 on Mon Jun 1 07:51:57 2026
+-- File generated with SQLiteStudio v3.4.21 on Mon Jun 1 09:45:44 2026
 --
 -- Text encoding used: System
 --
@@ -41,28 +41,28 @@ CREATE TABLE communities (
 );
 
 -- Table: contacts
-CREATE TABLE contacts (id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER REFERENCES people (id) ON DELETE CASCADE ON UPDATE CASCADE, type_id INTEGER DEFAULT (1), detail TEXT NOT NULL);
+CREATE TABLE contacts (id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER REFERENCES people (id) ON DELETE CASCADE ON UPDATE CASCADE, type_id INTEGER REFERENCES dictionaries (id) ON DELETE SET NULL ON UPDATE CASCADE, detail TEXT NOT NULL);
 
 -- Table: dictionaries
 CREATE TABLE dictionaries (id INTEGER PRIMARY KEY AUTOINCREMENT, parent_id INTEGER REFERENCES dictionaries (id) ON DELETE CASCADE ON UPDATE CASCADE);
+
+-- Table: dictionary_languages
+CREATE TABLE dictionary_languages (lang TEXT (2) PRIMARY KEY UNIQUE, name TEXT);
 
 -- Table: dictionary_parameters
 CREATE TABLE dictionary_parameters (expired TEXT, category_id INTEGER REFERENCES dictionaries (id) ON DELETE SET NULL ON UPDATE CASCADE, group_id INTEGER REFERENCES dictionaries (id) ON DELETE SET NULL ON UPDATE CASCADE, contact_type_id INTEGER REFERENCES dictionaries (id) ON DELETE SET NULL ON UPDATE CASCADE, discipline_id INTEGER REFERENCES dictionaries (id) ON DELETE SET NULL ON UPDATE CASCADE, person_role_id INTEGER REFERENCES dictionaries (id) ON DELETE SET DEFAULT ON UPDATE CASCADE);
 
 -- Table: dictionary_translations
-CREATE TABLE dictionary_translations (id INTEGER PRIMARY KEY AUTOINCREMENT, dictionary_id INTEGER NOT NULL, lang TEXT (2) REFERENCES languages (lang) ON DELETE CASCADE ON UPDATE CASCADE DEFAULT en NOT NULL, name TEXT, description TEXT);
-
--- Table: languages
-CREATE TABLE languages (lang TEXT (2) PRIMARY KEY UNIQUE, name TEXT);
+CREATE TABLE dictionary_translations (id INTEGER PRIMARY KEY AUTOINCREMENT, dictionary_id INTEGER NOT NULL, lang TEXT (2) REFERENCES dictionary_languages (lang) ON DELETE CASCADE ON UPDATE CASCADE DEFAULT en NOT NULL, name TEXT, description TEXT);
 
 -- Table: members
-CREATE TABLE members (id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER REFERENCES people (id) ON DELETE RESTRICT ON UPDATE CASCADE, club_id INTEGER REFERENCES clubs (id) ON DELETE RESTRICT ON UPDATE CASCADE, role_id INTEGER DEFAULT (1), group_id INTEGER DEFAULT (4));
+CREATE TABLE members (id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER REFERENCES people (id) ON DELETE RESTRICT ON UPDATE CASCADE, club_id INTEGER REFERENCES clubs (id) ON DELETE RESTRICT ON UPDATE CASCADE, role_id INTEGER DEFAULT (1) REFERENCES dictionaries (id) ON DELETE SET NULL ON UPDATE CASCADE, group_id INTEGER DEFAULT (4) REFERENCES dictionaries (id) ON DELETE SET NULL ON UPDATE CASCADE);
 
 -- Table: people
 CREATE TABLE people (id INTEGER PRIMARY KEY, surname TEXT NOT NULL, name TEXT, ssv INTEGER DEFAULT (0) UNIQUE, birth_date TEXT DEFAULT ('1900-01-01'));
 
 -- Table: sections
-CREATE TABLE sections (id INTEGER PRIMARY KEY AUTOINCREMENT, club_id INTEGER NOT NULL REFERENCES clubs (id) ON DELETE RESTRICT ON UPDATE CASCADE, discipline_id INTEGER NOT NULL DEFAULT (1), category_id INTEGER);
+CREATE TABLE sections (id INTEGER PRIMARY KEY AUTOINCREMENT, club_id INTEGER NOT NULL REFERENCES clubs (id) ON DELETE RESTRICT ON UPDATE CASCADE, discipline_id INTEGER NOT NULL DEFAULT (1) REFERENCES dictionaries (id) ON DELETE SET NULL ON UPDATE CASCADE, category_id INTEGER REFERENCES dictionaries (id) ON DELETE SET NULL ON UPDATE CASCADE);
 
 -- Index: idx_people_ssv
 CREATE INDEX idx_people_ssv ON people (ssv);
@@ -133,8 +133,7 @@ FROM dictionaries
     JOIN dictionary_translations ON dictionary_translations.dictionary_id = dictionaries.id;
 
 -- View: members_view
-CREATE VIEW members_view AS
-SELECT members.id,
+CREATE VIEW members_view AS SELECT members.id,
     clubs.name AS club,
     people.name,
     people.surname,
@@ -146,21 +145,20 @@ SELECT members.id,
 FROM members
     JOIN people ON people.id = members.person_id
     JOIN clubs ON clubs.id = members.club_id
-    JOIN dictionary_translations role ON role.dictionary_id = members.role_id
-    JOIN dictionary_translations grp ON grp.dictionary_id = members.group_id
+    JOIN dictionary_translations AS role ON role.dictionary_id = members.role_id
+    JOIN dictionary_translations AS grp ON grp.dictionary_id = members.group_id
         AND grp.lang = role.lang;
 
 -- View: sections_view
-CREATE VIEW sections_view AS
-SELECT clubs.name AS club,
+CREATE VIEW sections_view AS SELECT clubs.name AS club,
     discipline.name AS discipline,
     discipline.description,
     category.name AS category,
     discipline.lang
 FROM sections
     JOIN clubs ON clubs.id = sections.club_id
-    JOIN dictionary_translations discipline ON discipline.dictionary_id = sections.discipline_id
-    JOIN dictionary_translations category ON category.dictionary_id = sections.category_id
+    JOIN dictionary_translations AS discipline ON discipline.dictionary_id = sections.discipline_id
+    JOIN dictionary_translations AS category ON category.dictionary_id = sections.category_id
         AND category.lang = discipline.lang;
 
 -- Trigger: club_communities_audit_delete

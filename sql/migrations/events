@@ -1,0 +1,20 @@
+-- https://hischuetzen.ch/#gesellschaften
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Erinnerungsschiessen #_denschlacht');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Rütlischützen der Waldstätte');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Pistolen Rütlischützen');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Erinnerungsschiessen Burgdorf');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Bauernkriegs-Gedenkschiessen');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Morgartenschützenverband');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Grauholzschiessen');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Verband Historisches Murtenschiessen');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Calvenschützenverband');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Pfynschiessen');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Schwaderlohschiessen');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Überfallschützenverband Nidwalden');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Stoss – Schützenverband');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Gedenkschiessen am Rothenthurm');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Fahrtschiessen Näfels');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Tiro Storico del San Gottardo – Airolo');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Sempacherverband');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Schlachtgedenkschiessen an der Grimsel');
+INSERT INTO #__visforms_20 (published, created, f213) VALUES (1, NOW(), 'Tir des Bourbaki – laverrisanne.ch');

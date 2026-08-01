@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade" version="4.0">
+    <name>System – Staudenschiessen Visforms Redirect</name>
+    <author>Dani</author>
+    <version>1.0.0</version>
+    <description>Redirect users with existing Visforms record to DataEditList</description>
+
+    <files>
+        <filename plugin="visformsredirect">visformsredirect.php</filename>
+    </files>
+</extension>

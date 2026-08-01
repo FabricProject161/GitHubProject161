@@ -1,0 +1,75 @@
+@startuml
+|Participant|
+|Discipline|
+|Club|
+|Admin|
+|Portal|
+|Leader|
+start
+
+:Registration;
+|Portal|
+if (Has account?) then (No)
+    :New account;
+    :Name Email Phone;
+    :Street Postal City;
+    |Leader|
+    :Confirm email;
+    |Admin|
+    :Activate;
+endif
+
+|Leader|
+:Sign in;
+
+|Club|
+if (Found club?) then (No)
+    :New club;
+    :Name Postal City SSV;
+endif
+
+|Leader|
+:Add club;
+
+|Discipline|
+if (Found discipline?) then (No)
+    repeat
+        |Leader|
+        :Add discipline;
+        |Discipline|
+    repeat while (More disciplines?)
+endif 
+
+repeat
+    if (Attending?) then (yes)
+        :Register;
+    else (no)
+        :Unregister;
+    endif
+repeat while (More disciplines?)
+
+|Participant|
+if (Found participant?) then (No)
+    repeat
+        :SSV Name Birth Postal City;
+        :Discipline & Group;
+        |Discipline|
+        :Add participant;
+        |Participant|
+    repeat while (More participants?)
+endif 
+
+repeat
+    if (Attending?) then (yes)
+        :Register;
+    else (no)
+        :Unregister;
+    endif
+repeat while (More memberss?) is (Yes)
+
+|Leader|
+:Review;
+:Sign out;
+
+stop
+@enduml

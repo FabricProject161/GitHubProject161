@@ -1,0 +1,81 @@
+What problem did early computing systems face with data structures? | Each application stored data in its own unique structure, making development and maintenance difficult. | relational-data basics
+Why were early data structures inefficient? | They were hard to maintain and optimize for good application performance. | relational-data basics
+What was the purpose of the relational database model? | To solve the problem of multiple arbitrary data structures by providing a standard way to represent and query data. | relational-model fundamentals
+What is a key advantage of the relational model? | Its use of tables, which provide an intuitive, efficient, and flexible way to store structured information. | relational-model tables
+Why do organizations use relational databases? | To track inventories, process ecommerce transactions, manage customer information, and more. | relational-data use-cases
+When is a relational database useful? | When storing related data elements that must be organized in a rules-based, consistent structure. | relational-data design
+What does this module teach? | Key characteristics of relational databases and relational data structures. | module-overview
+What learning formats does the module offer? | Video-based content or text-and-image content. | learning-formats
+Why might learners use the text version? | It contains greater detail and can supplement the video presentation. | learning-formats
+What is the next unit after the introduction? | Understand relational data. | module-navigation
+What is normalization? | A schema design process that minimizes data duplication and enforces data integrity. | normalization database dp900
+Core rule of normalization: entities | Separate each entity into its own table. | normalization database dp900
+Core rule of normalization: attributes | Separate each discrete attribute into its own column. | normalization database dp900
+Core rule of normalization: identification | Uniquely identify each entity instance using a primary key. | normalization database dp900
+Core rule of normalization: relationships | Use foreign key columns to link related entities. | normalization database dp900
+Why does duplication occur in unnormalized spreadsheets? | Customer and product details are repeated for each item sold. | normalization database dp900
+Benefit of storing each entity in its own table | Removes duplication of data and simplifies updates. | normalization database dp900
+Benefit of decomposing attributes into columns | Ensures correct data types and improves query granularity. | normalization database dp900
+What is referential integrity? | Ensures foreign key values correspond to existing primary keys. | normalization database dp900
+What is a composite key? | A unique combination of multiple columns used as a primary or foreign key. | normalization database dp900
+Example of composite key in the module | LineItem table uses OrderNo + ItemNo to uniquely identify a line item. | normalization database dp900
+Why are foreign keys important? | They link related entities and allow lookup of shared data (e.g., customer address). | normalization database dp900
+What is SQL? | SQL stands for Structured Query Language and is used to communicate with relational databases. 
+What is SQL used for? | Retrieving, inserting, updating, and deleting data in relational databases. 
+Name common SQL-based database systems. | SQL Server, Azure SQL, MySQL, PostgreSQL, Oracle. 
+When was SQL standardized? | ANSI in 1986 and ISO in 1987. 
+Why do SQL dialects exist? | Vendors add proprietary extensions beyond the SQL standard. 
+Examples of SQL dialects | T‑SQL, pgSQL, PL/SQL. 
+Three categories of SQL statements | DDL, DCL, DML. 
+Purpose of DDL | Create, modify, rename, or drop database objects. 
+Danger of DROP | Dropping a table permanently deletes all rows unless a backup exists. 
+Purpose of DCL | Manage permissions using GRANT, DENY, REVOKE. 
+Purpose of DML | SELECT, INSERT, UPDATE, DELETE rows in tables. 
+Why use WHERE clauses? | To restrict which rows are selected, updated, or deleted. 
+Risk of UPDATE without WHERE | Modifies every row in the table. 
+Risk of DELETE without WHERE | Deletes every row in the table. 
+What does ORDER BY do? | Sorts query results by a specified column. 
+What does JOIN do? | Combines rows from multiple tables based on key relationships. 
+How does INSERT work? | Specifies table, columns, and values; standard SQL inserts one row at a time. 
+What is a view? | A view is a virtual table based on the results of a SELECT query. 
+Purpose of a view | Provides a window into specified rows of one or more underlying tables. 
+Example of a view | The Deliveries view joins Order and Customer tables to simplify retrieving delivery info. 
+How to query a view | You can filter and query a view just like a table. 
+What is a stored procedure? | A stored procedure defines SQL statements that can be run on command. 
+Purpose of stored procedures | Encapsulate programmatic logic for actions applications need when working with data. 
+Stored procedure flexibility | Parameters allow stored procedures to perform actions based on specific criteria. 
+Stored procedure example | RenameProduct updates a product’s name based on its ID. 
+What is an index? | An index helps you search for data in a table more efficiently. 
+Analogy for an index | Works like a book index: sorted references pointing to locations. 
+How indexes work | Store sorted column values with pointers to table rows. 
+Index usage in queries | Query optimizer uses indexes when WHERE clause references indexed columns. 
+Index performance | Greatly improves performance on large tables. 
+Index drawbacks | Consume storage and slow down insert/update/delete operations due to maintenance. 
+Index design tradeoff | Must balance query speed vs. overhead on write operations. 
+How to improve performance when frequently querying a table by a date column? | Create an index on the date column to speed up lookups.
+Why not use a stored procedure to improve query performance? | Stored procedures encapsulate logic but do not optimize data retrieval like indexes do.
+Why is a foreign key not appropriate for improving query speed? | Foreign keys enforce relationships, not performance optimization.
+How should customer addresses be stored in a normalized schema? | Store addresses in a separate table and link via a foreign key.
+Why avoid a single text field for addresses? | It prevents normalization and makes querying individual address components difficult.
+Why avoid multiple address fields directly in the customer table? | It violates normalization and creates redundancy.
+Which SQL statement updates a product price? | UPDATE Products SET Price = 15.99 WHERE ID = 101;
+Why is ALTER TABLE incorrect for updating data? | ALTER TABLE modifies structure, not row values.
+Why is INSERT incorrect for updating existing rows? | INSERT adds new rows instead of modifying existing ones.
+How do stored procedures enhance security? | They encapsulate SQL logic, reducing direct table access and exposure to SQL injection.
+Why don’t stored procedures encrypt data automatically? | Encryption is a separate database feature, not inherent to stored procedures.
+Do stored procedures require authentication per execution? | No, authentication is handled by database permissions, not per procedure call.
+What is a disadvantage of using views? | Complex views can cause performance issues because they query base tables each time.
+Why don’t views increase security risks? | Views can restrict column access and simplify permissions.
+Can views automatically update base tables? | No, views do not store data and cannot auto-update underlying tables.
+Which object speeds up a frequently run complex query without modifying tables? | An index improves query performance without altering table structure.
+Why not use a view for performance? | Views do not store data and rely on underlying queries.
+Why not use a stored procedure for performance? | Stored procedures do not optimize data retrieval.
+Primary benefit of a composite key? | It uniquely identifies a row using multiple columns when one column is insufficient.
+Why doesn’t a composite key simplify schema? | It adds complexity rather than reducing tables.
+Can composite keys allow duplicates? | No, they enforce uniqueness across combined columns.
+Correct SQL to retrieve ProductName and Price for products under 10? | SELECT ProductName, Price FROM Products WHERE Price < 10;
+Why is SELECT ProductName, Price WHERE ... incorrect? | WHERE must follow FROM.
+Why is SELECT * WHERE ProductName AND Price < 10 incorrect? | Invalid WHERE clause and missing FROM.
+How to represent a many-to-many relationship? | Create a junction table with foreign keys referencing both primary keys.
+Why not merge both tables? | It destroys normalization and mixes unrelated attributes.
+Why not add multiple foreign keys in each table? | It becomes unmanageable and violates normalization.

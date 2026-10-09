@@ -1,0 +1,88 @@
+What is Azure Cosmos DB?|A fully managed NoSQL database service on Azure (PaaS).|cosmosdb;definition 
+Who manages infrastructure tasks in Cosmos DB?|Microsoft handles provisioning, patching, updates, and backups.|cosmosdb;operations 
+What does schema-agnostic mean in Cosmos DB?|Items in the same container can have different structures.|cosmosdb;schema 
+Why is schema flexibility useful?|It supports applications where data shapes change over time.|cosmosdb;schema 
+Which Microsoft services use Cosmos DB internally?|Xbox Live, Microsoft 365, and core Azure services.|cosmosdb;usecases 
+What scale does Cosmos DB support?|Billions of operations per day.|cosmosdb;performance 
+What is the top-level resource in Cosmos DB?|The Account, which can contain unlimited databases.|cosmosdb;architecture 
+What is a Cosmos DB database?|A logical namespace grouping related containers.|cosmosdb;architecture 
+What is a Cosmos DB container?|Primary unit of storage and scaling; defines partition key, throughput, indexing, TTL.|cosmosdb;architecture 
+What are items in Cosmos DB?|Individual entities stored in containers (documents, rows, nodes, edges).|cosmosdb;architecture 
+What is a partition key?|A property used to distribute data across logical partitions.|cosmosdb;partitioning 
+What is the size limit of a logical partition?|Up to 20 GB.|cosmosdb;partitioning 
+Why is choosing a good partition key important?|Ensures even data distribution and balanced throughput.|cosmosdb;partitioning 
+How does Cosmos DB handle indexing?|Automatically indexes all item properties by default.|cosmosdb;indexing 
+Do you need to manage indexes manually?|No, Cosmos DB maintains indexes automatically.|cosmosdb;indexing 
+How does Cosmos DB support global distribution?|Data is replicated automatically to added Azure regions.|cosmosdb;globaldistribution 
+How does Cosmos DB reduce latency globally?|Users read/write from the nearest regional replica.|cosmosdb;globaldistribution 
+What availability benefit comes from multi-region writes?|High availability guarantees.|cosmosdb;globaldistribution 
+What are typical Cosmos DB latencies?|Reads ~4 ms, writes ~5 ms at the 99th percentile.|cosmosdb;performance 
+Why does Cosmos DB offer multiple consistency levels?|To balance latency, availability, and data freshness.|cosmosdb;consistency 
+What is Strong consistency?|Reads always reflect the latest write.|cosmosdb;consistency 
+What is Bounded Staleness?|Reads lag behind writes by a defined interval.|cosmosdb;consistency 
+What is Session consistency?|Guarantees read-your-own-writes within a session.|cosmosdb;consistency 
+What is Consistent Prefix?|Reads never see out-of-order writes.|cosmosdb;consistency 
+What is Eventual consistency?|Replicas converge over time.|cosmosdb;consistency 
+Which consistency level is recommended for most apps?|Session consistency.|cosmosdb;consistency 
+What are Request Units (RU/s)?|Unified measure of operation cost; ~1 RU equals reading a 1 KB item.|cosmosdb;throughput 
+Which operations consume RU/s?|Reads, writes, queries, deletes.|cosmosdb;throughput 
+What is Dedicated throughput?|Reserved exclusively for a single container.|cosmosdb;throughput 
+What is Shared throughput?|Shared across up to 25 containers.|cosmosdb;throughput 
+What is Serverless mode?|Pay per request; no provisioned throughput.|cosmosdb;throughput 
+What is a limitation of Serverless mode?|Only supports a single Azure region.|cosmosdb;throughput 
+What does Autoscale do?|Automatically adjusts RU/s based on demand.|cosmosdb;throughput 
+Why is Cosmos DB good for IoT workloads?|Fast ingestion of high-frequency device data.|cosmosdb;usecases 
+Why is Cosmos DB good for gaming?|Single-digit millisecond response times.|cosmosdb;usecases 
+Why is Cosmos DB good for retail/e-commerce?|Handles catalogs, carts, and orders at scale.|cosmosdb;usecases 
+Why is Cosmos DB good for web/mobile apps?|Supports personalization and social features.|cosmosdb;usecases 
+When is Cosmos DB not a good fit?|When complex multi-table joins are required.|cosmosdb;limitations 
+Which service is better for historical analytics?|Microsoft Fabric or Azure Synapse Analytics.|cosmosdb;limitations 
+Why does Cosmos DB support multiple APIs?|To let developers use familiar tools, languages, and drivers when working with data.|cosmosdb;apis
+What determines how an application interacts with Cosmos DB?|The API chosen when creating the Cosmos DB account.|cosmosdb;apis
+What role does the API play internally?|It acts as an abstraction layer over Cosmos DB’s internal storage format.|cosmosdb;architecture
+Why are multiple APIs beneficial for migrations?|Existing MongoDB or Cassandra apps can migrate with minimal code changes.|cosmosdb;migration
+Which APIs does Cosmos DB support?|NoSQL, MongoDB, Table, Apache Cassandra, and Apache Gremlin.|cosmosdb;apis
+Why do different APIs exist?|Each API is optimized for a different data model or workload.|cosmosdb;apis
+What is Cosmos DB for NoSQL?|The native JSON document API with SQL-like query syntax.|cosmosdb;nosql
+What was the NoSQL API previously called?|The SQL API (renamed in 2023).|cosmosdb;nosql
+Which API is recommended for new applications?|Cosmos DB for NoSQL.|cosmosdb;nosql
+What Fabric feature integrates with the NoSQL API?|Fabric mirroring for analytics on live operational data.|cosmosdb;fabric
+What is Cosmos DB for MongoDB?|A MongoDB-compatible API using BSON and MQL.|cosmosdb;mongodb
+Why choose the MongoDB API?|Ideal for teams with MongoDB expertise or migrating MongoDB workloads.|cosmosdb;mongodb
+What is Cosmos DB for Table?|A key-value API compatible with Azure Table Storage.|cosmosdb;table
+What advantages does Cosmos DB for Table offer over Azure Table Storage?|Global distribution, autoscale, secondary indexes, and higher scalability.|cosmosdb;table
+How are rows identified in the Table API?|By PartitionKey + RowKey.|cosmosdb;table
+What is Cosmos DB for Apache Cassandra?|A column-family API compatible with Cassandra drivers and CQL.|cosmosdb;cassandra
+Why choose the Cassandra API?|Ideal for migrating Cassandra workloads to a managed cloud service.|cosmosdb;cassandra
+What is Cosmos DB for Apache Gremlin?|A graph API for vertices and edges.|cosmosdb;gremlin
+What workloads fit the Gremlin API?|Social networks, recommendations, fraud detection, organizational hierarchies.|cosmosdb;gremlin
+What is Gremlin used for?|Traversing and manipulating graph data.|cosmosdb;gremlin
+What is the benefit of having five APIs?|You can match the API to your data model, team skills, and existing code.|cosmosdb;apis
+What does NoSQL mean in Cosmos DB?|Data is stored flexibly instead of strict relational tables.|cosmosdb;nosql
+How does Cosmos DB store data?|As JSON items with properties and values.|cosmosdb;json
+What is provisioning in Azure?|Creating and configuring a new resource.|cosmosdb;provisioning
+Which API is used in this lab?|Azure Cosmos DB for NoSQL.|cosmosdb;api
+Why choose Cosmos DB for NoSQL?|It stores and queries JSON using SQL-like syntax.|cosmosdb;api
+What is the purpose of the account name?|It must be globally unique because it becomes part of the service URL.|cosmosdb;account
+Why choose a nearby region?|To reduce latency during tests.|cosmosdb;performance
+Why use Provisioned throughput in this lab?|It provides predictable performance.|cosmosdb;throughput
+Why apply the free tier if available?|To experiment without charges.|cosmosdb;cost
+What does Quick Start create automatically?|A database, container, sample data, and partition key.|cosmosdb;quickstart
+What is a partition key?|A property used to group related items for scalability.|cosmosdb;partition
+Why is choosing a good partition key important?|It ensures even distribution and fast queries.|cosmosdb;partition
+What metadata does Cosmos DB add to items?|_rid, _self, _etag, _ts, _attachments.|cosmosdb;metadata
+Why must item IDs be unique?|Each item must be uniquely identifiable within the container.|cosmosdb;json
+What does SELECT * FROM c do?|Returns all items in the container.|cosmosdb;query
+What does CONTAINS(c.name, "Helmet") do?|Filters items whose name contains “Helmet”.|cosmosdb;query
+Why is SQL-like syntax useful?|It makes querying JSON familiar and easy.|cosmosdb;query
+How do you clean up Cosmos DB resources?|Delete the resource group containing the account.|cosmosdb;cleanup
+Why delete the resource group?|It removes the account and all resources in one step.|cosmosdb;cleanup
+Which feature applies to Azure Cosmos DB for Apache Cassandra and Azure Cosmos DB for PostgreSQL? | Support for SQL-based queries. | cosmosdb cassandra postgresql features 
+Why is Azure Cosmos DB ideal for retail platforms with global users? | It provides fast local read/write operations in multiple regions. | cosmosdb global distribution retail 
+Which use case is least aligned with Azure Cosmos DB features? | Complex transactional processing requiring strict ACID compliance. | cosmosdb limitations acid 
+Which Azure Cosmos DB API should be considered for modeling social interactions in a social network app? | Azure Cosmos DB for Apache Gremlin. | cosmosdb gremlin graph social 
+Which API allows developers to use MongoDB client libraries with Azure Cosmos DB? | Azure Cosmos DB for MongoDB. | cosmosdb mongodb api 
+In which scenario is Azure Cosmos DB for Table more advantageous than Azure Table Storage? | When higher scalability and performance are required. | cosmosdb table scalability 
+Which Azure Cosmos DB API should be used for a mobile app requiring personalized content and social media integration? | Azure Cosmos DB for MongoDB. | cosmosdb mobile personalization 
+How does Azure Cosmos DB for MongoDB store data? | In BSON (Binary JSON) format. | cosmosdb mongodb bson 
+Which scenario is particularly suited for Azure Cosmos DB? | IoT data ingestion and real-time analytics. | cosmosdb iot realtime 

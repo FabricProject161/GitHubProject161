@@ -1,0 +1,93 @@
+What is a common way for software applications to store data? | Many software applications store data in a relational database, where data is organized in related tables and managed using Structured Query Language (SQL). | Azure;Data;Relational;DP-900;Module-NonRelationalIntro
+What is a relational database? | A relational database organizes data into related tables and uses Structured Query Language (SQL) to manage and query that data. | Azure;Data;Relational;SQL;DP-900;Module-NonRelationalIntro
+Why might some applications not use a relational database? | Some applications don’t need the rigid structure of a relational database and instead rely on nonrelational (NoSQL) storage, which can be more flexible for certain data and workload types. | Azure;Data;NonRelational;NoSQL;DP-900;Module-NonRelationalIntro
+What is nonrelational (NoSQL) storage? | Nonrelational (NoSQL) storage refers to data stores that don’t use the traditional relational table structure and often provide flexible schemas, high scalability, and support for diverse data types. | Azure;Data;NonRelational;NoSQL;DP-900;Module-NonRelationalIntro
+Which cloud services are mentioned as options for storing data? | Azure Storage and Microsoft OneLake are mentioned as cloud services that offer a range of options for storing data. | Azure;Storage;OneLake;Cloud;DP-900;Module-NonRelationalIntro
+What will you explore in this module? | In this module, you explore the fundamental capabilities of Azure Storage and Microsoft OneLake, and learn how they support applications that require nonrelational data stores. | Azure;Storage;OneLake;NonRelational;DP-900;Module-NonRelationalIntro
+How do Azure Storage and Microsoft OneLake support applications? | Azure Storage and Microsoft OneLake provide scalable, cloud-based data storage options that can be used to support applications needing nonrelational data stores. | Azure;Storage;OneLake;Architecture;DP-900;Module-NonRelationalIntro
+What learning formats are available for this module? | You can complete the module in a video-based format or read the content as text and images. | Learning;Format;DP-900;Module-NonRelationalIntro
+Why might you still want to read the text even if you watch the videos? | The text contains greater detail than the videos, so you might refer to it as supplemental material to deepen your understanding. | Learning;Format;StudyTips;DP-900;Module-NonRelationalIntro
+What is Azure Blob Storage? | Azure Blob Storage is a cloud service for storing massive amounts of unstructured data as binary large objects (blobs).  | Azure;BlobStorage;DP-900;NonRelational
+What is a blob? | A blob is a data file stored in a format optimized for cloud-based storage, readable and writable via the Azure Blob Storage API.  | Azure;Blob;Storage;DP-900
+Where are blobs stored? | Blobs are stored inside containers within an Azure storage account.  | Azure;Containers;BlobStorage;DP-900
+What is an Azure storage container? | A container groups related blobs and defines access control at the container level.  | Azure;Containers;AccessControl;DP-900
+What authentication is recommended for Blob Storage? | Microsoft Entra ID with Azure RBAC is the recommended authentication method for precise permission assignment.  | Azure;Security;RBAC;EntraID;DP-900
+How are virtual folders handled in Blob Storage? | Virtual folders exist only through "/" in blob names; they are not real folders and cannot have folder-level operations.  | Azure;BlobStorage;Folders;DP-900
+What are block blobs? | Block blobs consist of variable-size blocks (up to 4,000 MiB each) and can reach 190.7 TiB total. Best for large binary objects that change infrequently.  | Azure;BlobTypes;BlockBlob;DP-900
+What are page blobs? | Page blobs use fixed 512‑byte pages, support random read/write, and can store up to 8 TB. Used for Azure VM disks.  | Azure;BlobTypes;PageBlob;DP-900
+What are append blobs? | Append blobs allow only adding blocks to the end; blocks up to 4 MB; max size ~195 GB.  | Azure;BlobTypes;AppendBlob;DP-900
+What is the Hot access tier? | The Hot tier stores frequently accessed data on high‑performance media.  | Azure;BlobStorage;AccessTiers;Hot;DP-900
+What is the Cool access tier? | Cool tier has lower storage cost but higher access cost; intended for infrequently accessed data; minimum 30‑day retention.  | Azure;BlobStorage;AccessTiers;Cool;DP-900
+What is the Cold access tier? | Cold tier is for rarely accessed data requiring fast retrieval; lower storage cost, higher access cost; minimum 90‑day retention.  | Azure;BlobStorage;AccessTiers;Cold;DP-900
+What is the Archive tier? | Archive tier has the lowest storage cost but very high latency; data is offline; minimum 180‑day retention; rehydration required before reading.  | Azure;BlobStorage;AccessTiers;Archive;DP-900
+What is a lifecycle management policy? | A policy can automatically move blobs between tiers (Hot→Cool→Cold→Archive) based on age and delete outdated blobs.  | Azure;Lifecycle;BlobStorage;DP-900
+What is Locally Redundant Storage (LRS)? | LRS keeps three copies of your data within a single datacenter.  | Azure;Redundancy;LRS;DP-900
+What is Zone-Redundant Storage (ZRS)? | ZRS stores data across three availability zones in a region for zone‑level resilience.  | Azure;Redundancy;ZRS;DP-900
+What is Geo-Redundant Storage (GRS)? | GRS asynchronously replicates data to a secondary region hundreds of miles away.  | Azure;Redundancy;GRS;DP-900
+What is Read-Access GRS (RA-GRS)? | RA‑GRS allows reading from the secondary region even before failover.  | Azure;Redundancy;RAGRS;DP-900
+What is Azure Data Lake Storage Gen2? | Azure Data Lake Storage Gen2 is a cloud‑scale data lake solution built into Azure Storage, combining Blob Storage scalability with a hierarchical file system. | Azure;ADLS;Gen2;DP-900
+What does ADLS Gen2 combine? | It combines Azure Blob Storage features—like storage tiers and lifecycle management—with a hierarchical file system compatible with analytics engines. | Azure;ADLS;BlobStorage;DP-900
+Which analytics systems can use ADLS Gen2? | Systems such as Azure Databricks can mount the distributed file system and process huge volumes of data. | Azure;Databricks;ADLS;DP-900
+What is OneLake built on? | Microsoft Fabric tenants automatically provision OneLake, which is built on top of Azure Data Lake Storage Gen2. | Azure;OneLake;Fabric;ADLS;DP-900
+What does the hierarchical namespace enable? | It enables POSIX‑compliant ACLs for fine‑grained read, write, and execute permissions on files and folders, independent of Azure RBAC. | Azure;ADLS;ACL;Security;DP-900
+How do you create an ADLS Gen2 file system? | You must enable the Hierarchical Namespace option on an Azure Storage account. | Azure;ADLS;HierarchicalNamespace;DP-900
+Can you upgrade an existing storage account to ADLS Gen2? | Yes, you can upgrade an existing Azure Storage account to support a hierarchical namespace. | Azure;ADLS;Upgrade;DP-900
+Is upgrading reversible? | No — upgrading to a hierarchical namespace is a one‑way process and cannot be reverted. | Azure;ADLS;Upgrade;Limitations;DP-900
+What is OneLake? | OneLake is a single, unified, logical data lake for the entire organization. | Azure;OneLake;Fabric;DP-900 
+Where is OneLake provisioned? | OneLake is automatically provisioned with every Microsoft Fabric tenant and acts as the central repository for analytics data. | Azure;OneLake;Fabric;DP-900 
+What data types does OneLake support? | OneLake supports structured and unstructured files and enables using the same data across multiple analytical engines without duplication. | Azure;OneLake;DataTypes;DP-900 
+What problem does OneLake solve for organizations? | It replaces the need for multiple separate data lakes by providing a single collaborative organization-wide data lake. | Azure;OneLake;Architecture;DP-900 
+How does OneLake support distributed ownership? | Workspaces allow different organizational groups to manage their own data items while maintaining governance boundaries. | Azure;OneLake;Workspaces;DP-900 
+What file format does OneLake use? | OneLake stores data in Delta Parquet, an open and efficient analytics file format. | Azure;OneLake;Delta;DP-900 
+Is OneLake compatible with existing ADLS Gen2 tools? | Yes, OneLake supports ADLS Gen2 APIs and SDKs, ensuring compatibility with existing applications. | Azure;OneLake;Compatibility;DP-900 
+How can you browse OneLake data on Windows? | You can navigate OneLake using the OneLake File Explorer. | Azure;OneLake;Explorer;DP-900 
+What is a file share? | A file share enables storing a file on one computer and granting access to users or apps on other computers. | Azure;Files;FileShare;DP-900 
+Why do traditional file shares not scale well? | They work in local networks but do not scale when user numbers grow or users are distributed across sites. | Azure;Files;Scaling;DP-900 
+What is Azure Files? | Azure Files provides cloud-based network shares similar to on-premises file shares, enabling multi-user access to documents and files. | Azure;Files;CloudShare;DP-900 
+What are the benefits of hosting file shares in Azure? | Organizations eliminate hardware costs, reduce maintenance, and gain high availability and scalable cloud storage. | Azure;Files;Benefits;DP-900 
+Where do you create Azure File Storage? | Azure File Storage is created inside an Azure Storage account. | Azure;Files;StorageAccount;DP-900 
+How much data can Azure Files store? | Up to 256 TiB for SSD-based accounts, and even more for HDD-based accounts. | Azure;Files;Capacity;DP-900 
+How large can a single file be? | A single file can be up to 4 TiB; share quotas can restrict this. | Azure;Files;Limits;DP-900 
+How many concurrent handles are supported? | Azure Files supports up to 2,000 concurrent handles per file or directory. | Azure;Files;Concurrency;DP-900 
+How can you upload files to Azure Files? | Via the Azure portal or tools like AzCopy. | Azure;Files;AzCopy;DP-900 
+What is Azure File Sync used for? | It synchronizes locally cached copies of shared files with Azure File Storage. | Azure;Files;FileSync;DP-900 
+What storage tiers does Azure Files offer? | HDD tier (lower cost) and SSD tier (higher throughput). | Azure;Files;Tiers;DP-900  
+Which protocols does Azure Files support? | SMB (Windows, Linux, macOS) and NFS (Linux kernel 4.3+). | Azure;Files;Protocols;DP-900  
+Is NFS supported on Windows or macOS? | No, NFS Azure file shares are not supported on Windows or macOS. | Azure;Files;NFS;DP-900 
+What is required to create an NFS share? | An SSD-tier storage account and a configured virtual network for access control. | Azure;Files;NFS;Networking;DP-900 
+What is Azure Table Storage? | Azure Table Storage is a NoSQL storage solution using tables of key/value data items. | Azure;Tables;NoSQL;DP-900 
+How is an item represented in Azure Tables? | Each item is a row containing columns for the required data fields. | Azure;Tables;Structure;DP-900 
+What newer service offers the same key/value model with higher performance? | Azure Cosmos DB for Table offers the same model with greater performance and global availability. | Azure;CosmosDB;Tables;DP-900 
+What is the recommended choice for new workloads? | Azure Cosmos DB for Table is recommended for new workloads. | Azure;CosmosDB;Recommendation;DP-900 
+Is an Azure Table similar to a relational database table? | No — Azure Tables store semi‑structured data and do not behave like relational tables. | Azure;Tables;NonRelational;DP-900 
+What makes each row unique in Azure Tables? | A unique key composed of a partition key and a row key. | Azure;Tables;Keys;DP-900 
+Do Azure Tables support relational features like foreign keys or stored procedures? | No — Azure Tables have no foreign keys, relationships, stored procedures, or views. | Azure;Tables;Limitations;DP-900 
+How is data typically modeled in Azure Tables? | Data is usually denormalized, with each row holding the full logical entity. | Azure;Tables;Denormalized;DP-900 
+Why can rows have different numbers of fields? | Because semi‑structured entities like customers may have varying numbers of phone numbers or addresses. | Azure;Tables;Flexibility;DP-900 
+What mechanism improves scalability and performance in Azure Tables? | Partitioning groups related rows by partition key and improves query performance. | Azure;Tables;Partitioning;DP-900 
+How do partitions help performance? | Searching with a partition key narrows the data scanned and reduces I/O operations. | Azure;Tables;Performance;DP-900 
+What defines the full key of a row? | The partition key plus a row key unique within that partition. | Azure;Tables;Keys;DP-900 
+How are items stored within a partition? | Items are stored in row key order. | Azure;Tables;Ordering;DP-900 
+What query types are efficient in Azure Tables? | Point queries for single rows and range queries for contiguous row key ranges. | Azure;Tables;Queries;DP-900 
+What design element optimizes data access in ADLS Gen2? | The hierarchical namespace enables logical folder structures and efficient big‑data analytics. | Azure;ADLS;Hierarchy;DP-900 
+Why is hierarchical namespace important? | It provides true directories, atomic operations, and compatibility with analytics engines. | Azure;ADLS;Hierarchy;DP-900 
+Why might a Blob Storage read fail? | Insufficient permissions on the container can block blob access. | Azure;BlobStorage;Security;DP-900 
+Which ADLS Gen2 feature organizes data efficiently? | Hierarchical namespace is required for folder hierarchies and structured analytics. | Azure;ADLS;Hierarchy;DP-900 
+What enables automatic tier management in Azure Storage? | Azure Blob Storage lifecycle management automatically moves data between tiers. | Azure;BlobStorage;Lifecycle;DP-900 
+Why might an app fail to write to Blob Storage? | Missing or misconfigured access permissions prevent write operations. | Azure;BlobStorage;Security;DP-900 
+Which tier is best for rarely accessed compliance data? | Archive tier provides lowest cost for long‑term retention. | Azure;BlobStorage;Archive;DP-900 
+What configuration is required for ADLS Gen2 folder hierarchies? | Hierarchical namespace must be enabled. | Azure;ADLS;Hierarchy;DP-900 
+What is the main advantage of ADLS Gen2 for analytics? | Hierarchical namespace improves performance and supports big‑data workloads. | Azure;ADLS;Analytics;DP-900 
+What are the four core Azure Storage services? | Blob Storage, Data Lake Storage Gen2, Azure Files, and Queues/Tables within the storage account. | Azure;Storage;Services;DP-900 
+Why is Azure Storage considered non-relational? | Because data does not need to be organized into related tables with fixed schema. | Azure;Storage;NonRelational;DP-900 
+What is a storage account? | The top-level resource that contains blobs, files, queues, and tables, and controls settings like cost, redundancy, encryption, and access. | Azure;StorageAccount;DP-900 
+What is a resource group? | A folder-like container that groups related Azure resources and allows deleting everything at once. | Azure;ResourceGroup;DP-900 
+What does Locally Redundant Storage (LRS) provide? | Three synchronous copies of data within a single region; lowest-cost redundancy. | Azure;LRS;Redundancy;DP-900 
+What is hierarchical namespace used for? | Enables real folders, atomic directory operations, and ACL-based permissions for Data Lake Storage Gen2. | Azure;ADLS;Hierarchy;DP-900 
+Why should soft delete be disabled before enabling hierarchical namespace? | Soft delete can interfere with the Data Lake Gen2 upgrade process. | Azure;ADLS;SoftDelete;DP-900 
+What is a blob container? | A logical grouping of blobs and the first level of access control. | Azure;BlobStorage;Container;DP-900 
+Why are folders in Blob Storage virtual? | Blob Storage uses a flat namespace; folders only exist as name prefixes and do not support folder-level operations. | Azure;BlobStorage;FlatNamespace;DP-900 
+What changes after enabling hierarchical namespace? | Folders become real directory objects that support rename, ACL management, and safe recursive operations. | Azure;ADLS;Hierarchy;DP-900 
+What does Azure Files provide? | Cloud-based SMB/NFS file shares that behave like traditional network drives. | Azure;AzureFiles;SMB;DP-900 
+What is the benefit of Classic file shares in hierarchical namespace accounts? | File shares are managed under “Classic file shares” when ADLS Gen2 is enabled. | Azure;AzureFiles;Classic;DP-900 
+What does deleting the resource group accomplish? | Removes the storage account and all resources inside it in one step. | Azure;ResourceGroup;Cleanup;DP-900 

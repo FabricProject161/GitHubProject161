@@ -1,0 +1,75 @@
+What is Microsoft Fabric? | A unified SaaS analytics platform combining engineering, warehousing, real-time analytics, data science, and Power BI on OneLake. | azure fabric saas analytics onelake
+What is Azure Databricks? | A cloud analytics platform built on Apache Spark, optimized for large-scale engineering, data science, and SQL analytics using Delta Lake. | azure databricks spark delta lakehouse
+What is OneLake? | The shared storage layer underlying Microsoft Fabric, enabling unified analytics without managing infrastructure. | azure onelake storage fabric
+What is Delta Lake? | An open-source storage format adding transactions, schema enforcement, and versioning to Parquet files. | azure delta lake parquet
+Why use Azure Databricks? | It supports code-first, notebook-based workflows for large-scale data engineering and data science. | azure databricks engineering notebooks
+What is large-scale analytics? | A combination of traditional BI data warehousing and big-data processing techniques for massive, diverse datasets. | analytics large-scale bi bigdata
+What is a conventional data warehouse? | A relational database optimized for querying and multidimensional modeling, fed by transactional data stores. | datawarehouse relational bi
+What is big-data processing? | Handling large volumes of diverse data via batch or streaming, stored in a data lake and processed by engines like Spark. | bigdata spark datalake
+What is a data lakehouse? | A design combining flexible data lake storage with SQL-based data warehouse analytics. | lakehouse architecture azure
+What learning formats are available? | Video-based or text-based content, with text offering more detailed explanations. | learning formats azure
+What is the purpose of data ingestion and processing in analytics architecture? | To load data from transactional stores, files, or streams into a data lake or warehouse for analysis. | azure warehousing ingestion processing 
+What is the difference between ETL and ELT? | ETL transforms data before loading; ELT loads data first and transforms it inside the analytical store. | azure etl elt warehousing 
+Why is data transformed in ETL/ELT processes? | To clean, filter, restructure, and optimize data for analytical queries. | azure warehousing transformation 
+How is large-scale data processing typically performed? | Using distributed systems that process high volumes of data in parallel across multi-node clusters. | azure bigdata distributed processing 
+What types of ingestion workloads exist? | Batch processing of static data and real-time processing of streaming data. | azure ingestion batch streaming 
+What are the main types of analytical data stores? | Relational data warehouses, file-based data lakes, and hybrid lakehouse architectures. | azure analytical stores lakehouse 
+What is the purpose of an analytical data model? | To simplify creation of reports, dashboards, and visualizations by structuring data for consumption. | azure modeling analytics 
+What were traditional analytical models called? | Cubes, where numeric values were pre-aggregated across dimensions using SSAS Multidimensional. | azure ssas cubes multidimensional 
+What is a semantic model? | A tabular model defining tables, relationships, hierarchies, and DAX measures with aggregations computed at query time. | azure semanticmodel dax powerbi 
+What is Direct Lake mode in Microsoft Fabric? | It reads Delta tables directly from OneLake without importing or pre-aggregating data. | fabric directlake onelake delta 
+What is the role of data visualization? | To present trends, comparisons, and KPIs through reports, dashboards, charts, and interactive exploration. | azure visualization bi kpi 
+What is self-service analytics? | Allowing non-technical users to explore and analyze data independently. | azure selfservice analytics 
+What is AI-assisted analytics? | Using natural language and AI to generate queries, DAX, SQL, summaries, and insights automatically. | azure ai analytics copilot genie 
+What does Power BI Q&A do? | Allows users to ask questions in plain English and receive chart responses. | powerbi qa natural language 
+What are the two main Azure platforms for large-scale analytics? | Microsoft Fabric and Azure Databricks. | azure fabric databricks analytics 
+How does Microsoft Fabric organize analytics layers? | As a unified SaaS workspace with shared OneLake storage and Delta Lake format. | fabric saas onelake delta 
+What is the Fabric Lakehouse? | A lakehouse combining data lake storage with SQL querying using Delta Lake. | fabric lakehouse delta sql 
+What is the Fabric Warehouse? | A fully managed, SQL Server–compatible relational data warehouse with strong schema enforcement. | fabric warehouse sql 
+What is Fabric Data Factory used for? | Building and scheduling pipelines and low-code transformations for data ingestion. | fabric datafactory pipelines 
+How does Power BI integrate with Fabric? | It delivers reports, dashboards, and semantic models, and uses Direct Lake to read Delta tables without import. | powerbi fabric directlake 
+What is Azure Databricks? | A Spark-based cloud analytics platform for engineering, data science, and SQL analytics using Delta Lake. | databricks spark delta analytics 
+What is the Databricks Lakehouse? | A unified Delta Lake storage layer supporting SQL analytics and machine learning. | databricks lakehouse delta ml 
+What is Databricks SQL? | A serverless SQL warehouse for analytical queries with dashboards, alerts, and query history. | databricks sql warehouse 
+What are Databricks Notebooks used for? | Collaborative Python, SQL, Scala, and R workflows for engineering, exploration, and machine learning. | databricks notebooks python sql ml 
+What is Unity Catalog? | A unified governance layer providing access control, lineage, and discovery for data and AI assets. | databricks unitycatalog governance 
+What is Genie in Databricks? | An AI-powered interface that generates and runs SQL from natural language questions. | databricks genie ai sql 
+What is the purpose of data ingestion in analytics? | To load data from operational systems, files, APIs, or streams into analytical stores for processing and analysis. | ingestion analytics fabric databricks 
+What does Fabric Data Factory provide for ingestion? | Pipelines for orchestrated workflows and Dataflows Gen2 for low-code Power Query transformations. | fabric datafactory pipelines dataflows 
+What are pipelines in Fabric Data Factory? | Multi-step workflows using activities and linked services to move and transform data. | fabric pipelines linkedservices 
+What is a OneLake Shortcut? | A live reference to external storage that enables zero-copy ingestion without pipelines or duplication. | fabric onelake shortcut zerocopy 
+Why use OneLake Shortcuts? | To access external data without moving it, useful for compliance or cost constraints. | fabric shortcut compliance cost 
+What is Fabric Mirroring? | Continuous near-real-time replication of external databases into OneLake in Delta Lake format. | fabric mirroring replication delta 
+What does Fabric Mirroring automatically handle? | Change tracking and replication without pipeline authoring. | fabric mirroring changetracking 
+What is Fabric Eventstream used for? | Real-time streaming ingestion from Event Hubs, Kafka, IoT Hub, and custom endpoints. | fabric eventstream realtime streaming 
+Where can Eventstream land data? | Lakehouse, KQL database, or Real-Time Intelligence destinations. | fabric eventstream kql lakehouse 
+What are Fabric Notebooks used for in ingestion? | Code-first ingestion using Spark to read from APIs, JDBC, files, and write to Delta tables. | fabric notebooks spark ingestion 
+What is Azure Data Factory? | A standalone Azure service for building data integration pipelines outside Fabric. | adf pipelines azure ingestion 
+When is Azure Data Factory preferred? | When connecting to on-premises sources or loading into non-Fabric destinations. | adf hybrid ingestion 
+What are Lakeflow Declarative Pipelines in Databricks? | A declarative framework for reliable, incrementally updated ingestion pipelines on Delta Lake. | databricks lakeflow delta pipelines 
+What do Lakeflow pipelines handle automatically? | Execution ordering, dependency tracking, and incremental processing. | databricks lakeflow automation 
+What are Databricks Notebooks used for in ingestion? | Ad-hoc or exploratory ingestion using PySpark, Python, Scala, SQL, or R. | databricks notebooks ingestion 
+How can Databricks Notebooks be operationalized? | By scheduling them as jobs or embedding them in Lakeflow pipelines. | databricks notebooks jobs lakeflow 
+What is an analytical data store? | A system optimized for analytics, including data warehouses, data lakes, and lakehouses. | analytics datastore fabric databricks | 
+What is a data warehouse? | A relational database optimized for analytics using fact and dimension tables. | warehouse star-schema sql | 
+What is a fact table? | A central table storing numeric measures that can be aggregated across dimensions. | warehouse facttable | 
+What is a dimension table? | A table representing entities such as customer, product, store, or time. | warehouse dimensiontable | 
+What is a star schema? | A schema with a central fact table connected to dimension tables. | warehouse star-schema | 
+What is a snowflake schema? | A star schema extended with additional hierarchy tables. | warehouse snowflake | 
+What is a data lake? | A distributed file store supporting structured, semi-structured, and unstructured data. | datalake spark schema-on-read | 
+What is schema-on-read? | Defining schema at query time without enforcing constraints on stored data. | datalake schema-on-read | 
+What is a data lakehouse? | A hybrid architecture combining data lake storage with SQL analytics. | lakehouse delta sql | 
+What is Delta Lake? | An open-source lakehouse format adding schema enforcement, transactions, and SQL support. | delta lakehouse | 
+Where is Fabric lakehouse data stored? | In OneLake, the unified tenant-wide storage layer. | fabric onelake lakehouse | 
+What happens when you create a Fabric Lakehouse? | A SQL analytics endpoint is created automatically. | fabric lakehouse sql-endpoint | 
+What is Microsoft Fabric? | A unified SaaS analytics platform built on OneLake. | fabric saas analytics | 
+What is the Fabric Lakehouse used for? | Delta Lake storage, Spark notebooks, and SQL analytics. | fabric lakehouse delta | 
+What is the Fabric Warehouse? | A SQL Server–compatible relational warehouse with strong schema enforcement. | fabric warehouse sql | 
+What is Fabric Mirroring? | Continuous replication of operational data into OneLake without pipelines. | fabric mirroring | 
+What is Azure Databricks? | A Spark-based analytics platform for engineering, data science, and SQL analytics. | databricks spark | 
+What is Databricks SQL Warehouse? | A dedicated SQL endpoint optimized for BI workloads. | databricks sqlwarehouse | 
+How do Fabric and Databricks support AI? | Both include AI assistants for SQL and notebook code generation. | ai fabric databricks | 
+How can Fabric and Databricks be combined? | ELT loads data into lake, Databricks processes it, Fabric Warehouse stores results. | fabric databricks hybrid | 
+Which term describes an analytics solution combining data lake and relational data warehouse functionality? | Data lakehouse | lakehouse architecture analytics 
+Which SaaS analytics solution can create a pipeline for data ingestion and processing? | Microsoft Fabric | fabric saas pipelines ingestion 
+Which open-source distributed processing engine does Microsoft Fabric include? | Apache Spark | spark distributed-processing fabric 

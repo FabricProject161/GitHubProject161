@@ -1,0 +1,113 @@
+What is data?|A collection of facts such as numbers, descriptions, and observations used to record information.|dp900 data-formats microsoft-learn
+What are entities in data structures?|Objects important to an organization (customers, products, sales orders).|dp900 data-formats microsoft-learn
+What are attributes?|Characteristics of an entity (name, address, phone number).|dp900 data-formats microsoft-learn
+What are the three categories of data formats?|Structured, semi-structured, and unstructured.|dp900 data-formats microsoft-learn
+What defines structured data?|It adheres to a fixed schema—all data has the same fields.|dp900 data-formats microsoft-learn
+How is structured data commonly represented?|In tabular form: rows = entity instances, columns = attributes.|dp900 data-formats microsoft-learn
+Where is structured data often stored?|In relational databases with tables referencing each other via keys.|dp900 data-formats microsoft-learn
+What defines semi-structured data?|Data with some structure, but allowing variation between instances.|dp900 data-formats microsoft-learn
+Example of variation in semi-structured data?|Customers may have multiple, one, or no email addresses.|dp900 data-formats microsoft-learn
+What is a common semi-structured data format?|JSON (JavaScript Object Notation).|dp900 data-formats microsoft-learn
+What does the JSON example illustrate?|Flexible fields that differ between customer documents.|dp900 data-formats microsoft-learn
+What is unstructured data?|Data without a specific structure (documents, images, audio, video, binary files).|dp900 data-formats microsoft-learn
+What modern data type is also considered unstructured?|Vector data (embeddings) used by AI assistants.|dp900 data-formats microsoft-learn
+Why do organizations store data?|To record entities, events, and other information for later analysis and reporting.|dp900 data-formats microsoft-learn
+What are the two broad categories of data stores?|File stores and databases.|dp900 data-formats microsoft-learn
+What is file storage?|A method of storing data in files on disks or cloud systems.|dp900 file-storage data-formats azure fundamentals
+What is CSV?|A delimited text format using commas to separate fields.|dp900 file-storage data-formats azure fundamentals
+What is JSON used for?|Representing structured and semi-structured data in hierarchical form.|dp900 file-storage data-formats azure fundamentals
+What is XML?|A markup language using tags to structure data.|dp900 file-storage data-formats azure fundamentals
+What is a BLOB?|Binary Large Object storing raw binary data like images or videos.|dp900 file-storage data-formats azure fundamentals
+What is Parquet?|A columnar storage format optimized for analytics.|dp900 file-storage data-formats azure fundamentals
+What is Avro?|A row-based binary format with JSON schema header.|dp900 file-storage data-formats azure fundamentals
+What is Delta Lake?|An extension of Parquet adding ACID transactions and versioning.|dp900 file-storage data-formats azure fundamentals
+What is a database? | A central system in which data can be stored and queried. | dp900 databases microsoft-learn
+Is a file system considered a database? | In a simplistic sense yes, but professionally the term refers to dedicated systems for managing data records. | dp900 databases microsoft-learn
+What type of data do relational databases store? | Structured data. | dp900 databases relational microsoft-learn
+How is data stored in relational databases? | In tables representing entities such as customers, products, or sales orders. | dp900 databases relational microsoft-learn
+What is a primary key? | A unique identifier assigned to each instance of an entity. | dp900 databases relational microsoft-learn
+How are primary keys used across tables? | They reference entity instances in other tables to define relationships. | dp900 databases relational microsoft-learn
+What does normalization achieve? | Eliminates duplicate data values so entity details are stored only once. | dp900 databases relational microsoft-learn
+What language is used to query relational databases? | SQL, based on an ANSI standard and similar across systems. | dp900 databases relational microsoft-learn
+What defines a nonrelational database? | A data management system that doesn’t apply a relational schema. | dp900 databases nonrelational microsoft-learn
+Why are nonrelational databases often called NoSQL? | Because they don’t use relational schemas, though some support SQL variants. | dp900 databases nonrelational microsoft-learn
+What is a key-value database? | A database where each record consists of a unique key and an associated value in any format. | dp900 databases nonrelational microsoft-learn
+What is a document database? | A key-value database where the value is a JSON document optimized for parsing and querying. | dp900 databases nonrelational microsoft-learn
+What is a column-family database? | A database storing rows and columns grouped into column families of logically related columns. | dp900 databases nonrelational microsoft-learn
+What is a graph database? | A database storing entities as nodes with links defining relationships between them. | dp900 databases nonrelational microsoft-learn
+What is a transactional system? | A system that records discrete business events the organization wants to track. | dp900 oltp transactions
+What is an example of a transaction? | Financial transfers or retail payments for goods and services. | dp900 oltp transactions
+How is a transaction described? | As a small, discrete unit of work. | dp900 oltp basics
+Why must transactional data be quickly accessible? | Because OLTP systems often process millions of transactions per day. | dp900 oltp performance
+What does OLTP stand for? | Online Transactional Processing. | dp900 oltp acronym
+What operations do OLTP databases optimize for? | Read and write operations supporting CRUD workloads. | dp900 oltp crud
+What ensures data integrity in OLTP systems? | Applying operations transactionally. | dp900 oltp integrity
+What does ACID stand for? | Atomicity, Consistency, Isolation, Durability. | dp900 oltp acid
+What is Atomicity? | A transaction must fully succeed or fully fail as one unit. | dp900 oltp acid
+What is Consistency? | A transaction moves the database from one valid state to another. | dp900 oltp acid
+What is Isolation? | Concurrent transactions cannot interfere and must produce consistent results. | dp900 oltp acid
+What is Durability? | Once committed, a transaction remains committed even after system restart. | dp900 oltp acid
+What applications do OLTP systems typically support? | Live line‑of‑business (LOB) applications. | dp900 oltp lob
+What is analytical data processing? | Read‑mostly systems storing large volumes of historical/business data for analysis. | analytical-processing
+What are analytical snapshots? | Analytics based on single or multiple time‑based snapshots. | analytical-processing
+What is ETL? | Extract, Transform, Load – operational data processed before entering the data lake. | etl elt data-lake
+What is ELT? | Extract, Load, Transform – transformations applied after loading into the lakehouse. | elt lakehouse
+Where is data loaded for structured analytics? | Into tables in a lakehouse or data warehouse. | lakehouse warehouse tables
+What is an OLAP/semantic model? | Aggregated storage optimized for multidimensional analytical workloads. | olap semantic-model
+What are measures? | Aggregated numeric values calculated across dimensions. | measures dimensions
+Example of measure usage? | Sales revenue aggregated by date, customer, product. | measures example
+Most common semantic model platform? | Power BI semantic models. | powerbi semantic-model
+Purpose of data lakes? | Large‑scale file‑based analytical storage. | data-lake
+Purpose of data warehouses? | Relational schema optimized for read/query performance. | data-warehouse
+Purpose of lakehouses? | Combine lake flexibility with warehouse relational semantics. | lakehouse
+Why denormalize OLTP data? | To improve query performance in analytical schemas. | denormalization performance
+Why are OLAP queries fast? | Data is preaggregated across dimensions. | olap performance
+Roles: Data Scientist | Works with raw files in the data lake. | roles data-scientist
+Roles: Data Analyst | Queries warehouse tables for reports/visualizations. | roles data-analyst
+Roles: Business User | Consumes dashboards built on semantic models. | roles business-user
+What does Microsoft Fabric provide? | Unified SaaS workspace for storage, engineering, warehousing, reporting. | fabric analytics
+What does Azure Databricks provide? | Large‑scale engineering & data science using Delta Lake. | databricks delta-lake
+What does Microsoft Purview provide? | Unified data security, governance, compliance. | purview governance
+Medallion: Bronze layer | Raw, untransformed data from source systems. | medallion bronze
+Medallion: Silver layer | Cleaned, conformed, deduplicated data. | medallion silver
+Medallion: Gold layer | Aggregated, business‑ready data for analytics. | medallion gold
+Why use medallion architecture? | Clear quality boundaries; easy reprocessing from Bronze. | medallion benefits
+Which data store is most appropriate for storing real-time sensor data in a manufacturing plant? | Time-series database | dp900 assessment | 
+Which system efficiently handles high-volume transaction data with real-time updates? | Online Transactional Processing (OLTP) system | dp900 assessment | 
+Which storage solution is best for large volumes of historical, structured, read-optimized data? | Data warehouse | dp900 assessment | 
+Which file format optimizes storage and processing efficiency for analytical data in a lakehouse? | Parquet | dp900 assessment | 
+Which system should a retail company use to maintain inventory and process customer transactions efficiently? | Online Transactional Processing (OLTP) system | dp900 assessment | 
+Which system ensures high accuracy and database integrity for financial transactions? | Online Transactional Processing (OLTP) system | dp900 assessment | 
+Which type of database should be used for storing and querying semi-structured data like JSON? | Document database | dp900 assessment | 
+How does a data warehouse differ from a data lakehouse? | A data warehouse uses a fully relational schema; a lakehouse combines the flexibility of a data lake with relational querying. | dp900 assessment | 
+Which file format is best for storing large-scale analytical data for efficient processing in a data lake? | Parquet | dp900 assessment | 
+What is Azure SQL? | A family of SQL Server–based relational database services. | azure-sql | 
+Azure SQL Database | Fully managed PaaS relational database. | azure-sql,paas | 
+Azure SQL Managed Instance | Hosted SQL Server with flexible configuration and partial admin responsibility. | azure-sql | 
+Azure SQL VM | SQL Server running on a VM with full management control. | azure-sql | 
+Who uses Azure SQL? | DBAs for transactional apps, engineers for ETL, analysts for reporting. | roles,azure-sql | 
+Azure SQL AI features | Natural-language query generation and performance troubleshooting. | azure-sql,ai | 
+Azure Database for MySQL | Managed MySQL service for LAMP-style apps. | mysql,open-source | 
+Azure Database for PostgreSQL | Hybrid relational-object database with custom data types. | postgresql,open-source | 
+What is Azure Cosmos DB? | Global-scale NoSQL DB supporting JSON, key-value, column-family, and graph models. | cosmosdb,nosql | 
+Who manages Cosmos DB? | Often developers; DBAs in some orgs. | cosmosdb,roles | 
+Cosmos DB AI features | Natural-language exploration and querying. | cosmosdb,ai | 
+Azure Storage types | Blobs, file shares, tables, and data lakes. | storage | 
+What is a data lake? | Hierarchical blob storage for distributed analytics. | storage,data-lake | 
+Azure Data Factory | Pipeline orchestration for ingesting, transforming, and moving data. | data-factory,etl | 
+ADF usage | ETL pipelines populating analytical stores. | data-factory | 
+Fabric Data Factory | Integrated version inside Microsoft Fabric. | fabric,data-factory | 
+Microsoft Fabric | Unified SaaS analytics platform on OneLake. | fabric,analytics | 
+Fabric capabilities | Ingestion, lakehouse, warehouse, streaming, BI, ML, governance. | fabric | 
+Fabric AI features | Natural-language SQL, notebook code, pipeline generation. | fabric,ai | 
+Fabric IQ | Shared semantic meaning across enterprise data for natural-language queries. | fabric-iq,semantic | 
+Power BI | BI and visualization platform for reports and dashboards. | powerbi,bi | 
+Power BI in Fabric | Uses semantic models for structured analytics. | powerbi,fabric | 
+Power BI AI features | Natural-language summaries, visuals, DAX generation. | powerbi,ai | 
+Azure Databricks | Spark-based analytics platform optimized for Delta Lake. | databricks,spark | 
+Databricks usage | Engineering, data science, SQL analytics, notebooks. | databricks | 
+Databricks AI features | Natural-language Spark and SQL generation. | databricks,ai | 
+Azure Stream Analytics | Real-time stream processing with input-query-output model. | stream-analytics,real-time | 
+Azure Data Explorer | High-performance analytics for log and telemetry data. | data-explorer,telemetry | 
+Microsoft Purview | Enterprise data governance, lineage, and discoverability. | purview,governance | 
+Microsoft Foundry | Unified PaaS for enterprise AI operations and intelligent apps. | foundry,ai | 

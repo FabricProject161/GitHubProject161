@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="user" method="upgrade" version="4.0">
+    <name>plg_user_emailname</name>
+    <author>Dani</author>
+    <version>1.0.0</version>
+    <description>Setzt Name & Benutzername auf E-Mail und blendet die Felder im Frontend aus.</description>
+	
+    <files>
+        <filename plugin="emailname">emailname.php</filename>
+    </files>
+</extension>

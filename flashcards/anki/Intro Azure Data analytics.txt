@@ -1,0 +1,91 @@
+Batch processing|Definition: processing data in large collected groups.|batch|
+Batch processing triggers|Time‑scheduled, data‑volume, or event‑based triggers.|batch|
+Batch processing example|Credit card companies generate monthly bills instead of per‑purchase bills.|batch|
+Batch advantages|Efficient for large datasets; can run during off‑peak hours.|batch|
+Batch disadvantages|Delayed results; errors can halt entire batch; requires validated input.|batch|
+Stream processing|Definition: processing each data event immediately upon arrival.|stream|
+Stream processing suitability|Ideal for dynamic, continuously generated data.|stream|
+Stream example|Counting cars as they pass instead of collecting them first.|stream|
+Stream real‑world uses|Stock market monitoring, gaming telemetry, geo‑recommendations.|stream|
+Stream latency|Milliseconds or seconds.|stream|
+Batch vs Stream: data scope|Batch processes full datasets; stream processes recent/windowed data.|comparison|
+Batch vs Stream: data size|Batch handles large datasets; stream handles micro‑batches or single events.|comparison|
+Batch vs Stream: latency|Batch latency = hours; stream latency = milliseconds.|comparison|
+Batch vs Stream: analysis|Batch for complex analytics; stream for simple aggregates.|comparison|
+Combined architectures|Lambda, Delta, and Kappa architectures combine batch and stream processing.|architecture|
+Lambda architecture|Uses both batch and stream layers for real‑time + historical analytics.|architecture|
+Kappa architecture|Eliminates batch layer; treats all data as a continuous stream.|architecture|
+Lambda architecture|Definition: A combined batch + stream processing pattern for large-scale analytics.|lambda
+Lambda architecture layers|Batch layer, Speed (stream) layer, Serving layer.|lambda
+Batch layer role|Ingests non-streaming data and performs periodic batch processing.|lambda
+Speed layer role|Processes streaming data in real time for immediate analytics.|lambda
+Serving layer role|Combines batch and stream outputs for unified analytics.|lambda
+Lambda: real-time analytics|Stream processing filters/aggregates data over time windows.|lambda
+Lambda: historical analytics|Batch results stored in analytical data stores for long-term analysis.|lambda
+Why Lambda exists|Provides both real-time insights and accurate historical analytics.|lambda
+Lambda architecture|Combined batch + stream architecture with separate layers.|lambda
+Lambda layers|Batch layer, Speed (stream) layer, Serving layer.|lambda
+Lambda purpose|Supports both real-time and historical analytics.|lambda
+Delta architecture|Modern unified batch+stream architecture using lakehouse storage.|delta
+Delta advantage|Simplifies Lambda by reducing pipeline duplication.|delta
+Kappa architecture|Stream-only architecture; eliminates batch layer.|kappa
+Kappa historical processing|Reprocesses data by replaying the stream.|kappa
+Lambda vs Delta|Lambda has separate batch+stream pipelines; Delta unifies them.|comparison
+Lambda vs Kappa|Lambda uses batch+stream; Kappa uses stream-only.|comparison
+Delta vs Kappa|Delta supports batch+stream; Kappa supports stream-only.|comparison
+Stream architecture|Events generate digital data (sensor, social post, log entry).|stream|
+Streaming source|Captures event data; may be folder, table, or robust queue.|stream|
+Perpetual query|Processes event streams; selects, projects, aggregates over time windows.|processing|
+Streaming sink|Outputs results to files, tables, dashboards, or queues.|sink|
+Fabric Real-Time Intelligence|Integrated toolset: Eventstreams, Eventhouse, Dashboards, Activator.|fabric|
+Eventhouse|Time-series/event DB using KQL for fast telemetry analysis.|fabric|
+Fabric AI assistance|Generates KQL queries from natural language.|fabric|
+Spark Structured Streaming|Open-source streaming on Apache Spark (Databricks, Fabric).|spark|
+Azure Stream Analytics|PaaS streaming jobs with perpetual queries and flexible outputs.|asa|
+Event Hubs|High-volume ingestion; ordered delivery; at-least-once guarantee.|source|
+IoT Hub|Optimized ingestion for IoT device telemetry.|source|
+ADLS Gen2|Scalable storage; usable as streaming source.|source|
+Kafka|Open-source ingestion commonly used with Spark.|source|
+Event Hubs sink|Queues processed data for downstream processing.|sink|
+ADLS/OneLake|Persists processed results as files.|sink|
+SQL/Databricks/Fabric|Stores processed results in tables.|sink|
+Power BI|Real-time dashboards and visualizations.|sink|
+Real-Time Intelligence|Fabric toolset for ingesting, processing, analyzing, and reacting to streaming data.|fabric
+Real-Time Hub|Central catalog for discovering and sharing streaming data across the organization.|hub
+Streaming data exploration|Choose a data stream and explore patterns, anomalies, and trends.|exploration
+Real-Time Dashboards|Visualize streaming data with live charts and insights.|dashboard
+Natural Language & Copilot|Generate queries and insights using natural language.|copilot
+Activator alerts|Trigger automated actions when real-time conditions are met.|activator
+Unified workspace|All real-time ingestion, analysis, and visualization occur within Fabric.|fabric
+End-to-end pipeline|Covers event arrival → storage → query → dashboard → automated action.|pipeline
+Spark Structured Streaming|Real-time stream processing built on Spark SQL.|spark
+Unbounded table|Streaming data modeled as a continuously growing table.|concept
+Perpetual query|Continuously running query that processes new events.|processing
+Micro-batch mode|Processes streaming data in small batches.|mode
+Continuous processing|Low-latency mode for near real-time analytics.|mode
+Event sources|Kafka, Event Hubs, IoT Hub, cloud storage.|sources
+Event sinks|Delta tables, files, SQL DBs, dashboards, queues.|sinks
+Checkpointing|Mechanism for fault tolerance and recovery.|reliability
+Exactly-once semantics|Ensures each event is processed once in supported sinks.|reliability
+Fabric integration|Spark streaming runs in Fabric notebooks and Lakehouses.|fabric
+Delta Lake|Common sink for structured streaming with ACID guarantees.|delta
+Use cases|IoT telemetry, log analytics, real-time dashboards.|usecase
+Delta Lake|ACID-compliant storage layer on top of Parquet.|delta
+Delta Log|Transaction log tracking table versions, schema, and file changes.|delta
+ACID Transactions|Guarantees reliable concurrent reads/writes in Delta Lake.|consistency
+Schema Enforcement|Prevents bad or incompatible data from entering the table.|schema
+Schema Evolution|Allows controlled changes like adding columns.|schema
+Time Travel|Query historical table versions using timestamps or version numbers.|history
+Unified Batch + Streaming|Supports both batch and streaming reads/writes.|streaming
+OPTIMIZE|Compacts small files to improve performance.|performance
+Z-ORDER|Organizes data for faster filtering and skipping.|performance
+Checkpointing|Creates Parquet checkpoints to speed up Delta log reads.|performance
+Fabric Lakehouse|Uses Delta Lake as its native storage format.|fabric
+DirectLake|Power BI reads Delta tables directly without import.|fabric
+Spark Integration|Delta Lake works natively with Spark Structured Streaming.|spark
+D365 F&SCM Use Case|Ideal for ERP transactional + telemetry data with ACID guarantees.|d365
+Stream processing definition|Data is processed continually as new records arrive.|stream
+Batch processing definition|Data is collected then processed together as a batch.|batch
+Real-Time Hub|Fabric component that centrally manages streaming data sources.|fabric
+Streaming data|Data generated continuously from events, sensors, logs, or apps.|stream
+Knowledge check purpose|Validates understanding of real-time analytics fundamentals.|assessment

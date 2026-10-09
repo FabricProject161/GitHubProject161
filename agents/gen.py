@@ -30,11 +30,11 @@ ORG = {  # id -> (reports_to, role/status note)
     '[redacted id]': (OPS, 'Non-financial storage; owns agent-profile topics (export, redaction, upkeep) since 9 Oct 2026.'),
     '[redacted id]': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
     '[redacted id]': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
-    ERP: (PDM, 'PAUSED (mentoring) since 3 Oct 2026 until the user says resume. Manages Data Analyst and Brand Designer.'),
+    ERP: (PDM, 'PAUSED (mentoring) since 3 Oct 2026 until the user says resume. Manages Data Analyst.'),
     '[redacted id]': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
     '[redacted id]': (PDM, 'PAUSED since creation (9 Oct 2026). Target: Berufspruefung Wirtschaftsinformatik, May 2028.'),
     '[redacted id]': (ERP, 'CV/Lebenslauf work (FYI to People Development Manager) and Staudenschiessen reporting.'),
-    '[redacted id]': (ERP, 'Visual design.'),
+    '[redacted id]': (GROK, 'Visual design (reports to Grok Bot since 10 Oct 2026).'),
     '[redacted id]': (GROK, 'Sole owner of calendar writes; Staudenschiessen E2E tests.'),
     '[redacted id]': (GROK, 'Home topics.'),
     '[redacted id]': (GROK, 'Etsy trend briefs.'),
@@ -134,7 +134,7 @@ def redact(text):
 def rename(text):
     for old, new in RENAMES:
         text = re.sub(r'(?<![\w-])' + re.escape(old) + r'(?![\w-])', new, text)
-    text = re.sub(r'(?<![\w(])Chief of Staff(?! \(retired)', 'Grok Bot (Chief of Staff)', text)
+    text = re.sub(r'(?<![\w(])(?<!Grok Bot, )Chief of Staff(?! \(retired)', 'Grok Bot (Chief of Staff)', text)
     text = text.replace(COS_OLD, GROK)  # references to the old CoS now point at Grok Bot
     text = text.replace('Application Manager D365 (id ' + ERP, 'ERP Capability Advisor (id ' + ERP)
     return text
@@ -185,13 +185,13 @@ readme = f"""# Agent profiles export
 
 _This index is named `AGENTS-README.md` because this folder already has its own `README.md` (the GitHubProject161 repository readme), which is left untouched._
 
-## Org and reporting lines (as of 9 Oct 2026)
+## Org and reporting lines (as of 10 Oct 2026)
 
 - **Grok Bot** (`{GROK}`) is Chief of Staff and router. It replaced the former Chief of Staff agent (`{COS_OLD}`, now retired, routines paused) on 9 Oct 2026.
 - **Operations** reports to Grok Bot and manages **People Development Manager** and **Platform Engineer**.
 - **People Development Manager** manages the Advisors: Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor. **All Advisors are paused** (since 3 Oct 2026; Business Technology Advisor since its creation on 9 Oct) until the user says resume.
-- **ERP Capability Advisor** manages **Data Analyst** and **Brand Designer**.
-- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
+- **ERP Capability Advisor** manages **Data Analyst**.
+- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Brand Designer (visual design), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
 
 ## Agents ({len(index)})
 

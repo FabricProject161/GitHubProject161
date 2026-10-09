@@ -5,8 +5,8 @@
 - **Title:** _(empty in profile.json)_
 - **Status:** active
 - **Reports to:** Grok Bot (`2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002`)
-- **Direct reports:** -
-- **Current role (export note):** Staudenschiessen site; owns FabricProject161/GitHub work (from 9 Oct 2026).
+- **Direct reports:** Data Analyst
+- **Current role (export note):** Staudenschiessen site; owns FabricProject161/GitHub work (from 9 Oct 2026). Manages Data Analyst (since 10 Oct 2026).
 
 ## Description / instructions (from profile.json)
 

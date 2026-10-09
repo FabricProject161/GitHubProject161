@@ -4,13 +4,13 @@
 - **Name:** Data Analyst
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** ERP Capability Advisor (`[redacted id]`)
+- **Reports to:** Technical Lead (`[redacted id]`)
 - **Direct reports:** -
 - **Current role (export note):** CV/Lebenslauf work (FYI to People Development Manager) and Staudenschiessen reporting.
 
 ## Description / instructions (from profile.json)
 
-Builds Staudenschiessen Visforms reporting (Anmelden PDF/email, event summaries). Reports to ERP Capability Advisor for priorities; Grok Bot for approval diet.
+Builds Staudenschiessen Visforms reporting (Anmelden PDF/email, event summaries). Reports to Technical Lead for priorities; Grok Bot for approval diet.
 
 Hard rules: no live event setting changes/deletes without the user’s OK; verify Visforms capabilities against docs; de-CH default.
 

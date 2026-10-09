@@ -30,15 +30,15 @@ ORG = {  # id -> (reports_to, role/status note)
     '[redacted id]': (OPS, 'Non-financial storage; owns agent-profile topics (export, redaction, upkeep) since 9 Oct 2026.'),
     '[redacted id]': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
     '[redacted id]': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
-    ERP: (PDM, 'PAUSED (mentoring) since 3 Oct 2026 until the user says resume. Manages Data Analyst.'),
+    ERP: (PDM, 'PAUSED (mentoring) since 3 Oct 2026 until the user says resume. No direct reports.'),
     '[redacted id]': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
     '[redacted id]': (PDM, 'PAUSED since creation (9 Oct 2026). Target: Berufspruefung Wirtschaftsinformatik, May 2028.'),
-    '[redacted id]': (ERP, 'CV/Lebenslauf work (FYI to People Development Manager) and Staudenschiessen reporting.'),
+    '[redacted id]': ('[redacted id]', 'CV/Lebenslauf work (FYI to People Development Manager) and Staudenschiessen reporting.'),
     '[redacted id]': (GROK, 'Visual design (reports to Grok Bot since 10 Oct 2026).'),
     '[redacted id]': (GROK, 'Sole owner of calendar writes; Staudenschiessen E2E tests.'),
     '[redacted id]': (GROK, 'Home topics.'),
     '[redacted id]': (GROK, 'Etsy trend briefs.'),
-    '[redacted id]': (GROK, 'Staudenschiessen site; owns FabricProject161/GitHub work (from 9 Oct 2026).'),
+    '[redacted id]': (GROK, 'Staudenschiessen site; owns FabricProject161/GitHub work (from 9 Oct 2026). Manages Data Analyst (since 10 Oct 2026).'),
     '[redacted id]': (GROK, 'Taxes / eTAX Aargau.'),
     '[redacted id]': (GROK, 'Money: invoices, billing, payments.'),
     '[redacted id]': (GROK, 'Mail/comms, morning inbox digest, rejection follow-ups.'),
@@ -190,7 +190,7 @@ _This index is named `AGENTS-README.md` because this folder already has its own 
 - **Grok Bot** (`{GROK}`) is Chief of Staff and router. It replaced the former Chief of Staff agent (`{COS_OLD}`, now retired, routines paused) on 9 Oct 2026.
 - **Operations** reports to Grok Bot and manages **People Development Manager** and **Platform Engineer**.
 - **People Development Manager** manages the Advisors: Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor. **All Advisors are paused** (since 3 Oct 2026; Business Technology Advisor since its creation on 9 Oct) until the user says resume.
-- **ERP Capability Advisor** manages **Data Analyst**.
+- **Technical Lead** manages **Data Analyst**. ERP Capability Advisor has no direct reports.
 - Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Brand Designer (visual design), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
 
 ## Agents ({len(index)})

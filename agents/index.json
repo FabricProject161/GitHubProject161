@@ -72,9 +72,7 @@
    "title": "",
    "status": "paused",
    "reports_to": "[redacted id]",
-   "direct_reports": [
-    "[redacted id]"
-   ]
+   "direct_reports": []
   },
   {
    "file": "agents/ai-engineering-advisor.md",
@@ -128,7 +126,9 @@
    "title": "",
    "status": "active",
    "reports_to": "[redacted id]",
-   "direct_reports": []
+   "direct_reports": [
+    "[redacted id]"
+   ]
   },
   {
    "file": "agents/platform-engineer.md",

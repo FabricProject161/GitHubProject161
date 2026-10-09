@@ -5,8 +5,8 @@
 - **Title:** _(empty in profile.json)_
 - **Status:** paused
 - **Reports to:** People Development Manager (`[redacted id]`)
-- **Direct reports:** Data Analyst
-- **Current role (export note):** PAUSED (mentoring) since 3 Oct 2026 until the user says resume. Manages Data Analyst.
+- **Direct reports:** -
+- **Current role (export note):** PAUSED (mentoring) since 3 Oct 2026 until the user says resume. No direct reports.
 
 ## Description / instructions (from profile.json)
 

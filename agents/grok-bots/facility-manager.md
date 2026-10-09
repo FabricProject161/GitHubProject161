@@ -1,10 +1,9 @@
 # Facility Manager
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Facility Manager
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`[redacted id]`)
+- **Reports to:** Grok Bot
 - **Direct reports:** -
 - **Current role (export note):** Home topics.
 

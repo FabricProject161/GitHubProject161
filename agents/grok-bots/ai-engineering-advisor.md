@@ -1,10 +1,9 @@
 # AI Engineering Advisor
 
-- **Agent ID:** `[redacted id]`
 - **Name:** AI Engineering Advisor
 - **Title:** _(empty in profile.json)_
 - **Status:** paused
-- **Reports to:** People Development Manager (`[redacted id]`)
+- **Reports to:** People Development Manager
 - **Direct reports:** -
 - **Current role (export note):** PAUSED since 3 Oct 2026 until the user says resume.
 

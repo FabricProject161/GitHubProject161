@@ -1,10 +1,9 @@
 # Data Analyst
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Data Analyst
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Technical Lead (`[redacted id]`)
+- **Reports to:** Technical Lead
 - **Direct reports:** -
 - **Current role (export note):** CV/Lebenslauf work (FYI to People Development Manager) and Staudenschiessen reporting.
 

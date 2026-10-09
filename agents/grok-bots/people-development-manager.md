@@ -1,10 +1,9 @@
 # People Development Manager
 
-- **Agent ID:** `[redacted id]`
 - **Name:** People Development Manager
 - **Title:** Talent Manager _(legacy title, older agent name)_
 - **Status:** active
-- **Reports to:** Operations (`[redacted id]`)
+- **Reports to:** Operations
 - **Direct reports:** Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor
 - **Current role (export note):** Talent system. Manages the five Advisors (all paused).
 

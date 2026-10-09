@@ -1,10 +1,9 @@
 # Business Technology Advisor
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Business Technology Advisor
 - **Title:** _(empty in profile.json)_
 - **Status:** paused
-- **Reports to:** People Development Manager (`[redacted id]`)
+- **Reports to:** People Development Manager
 - **Direct reports:** -
 - **Current role (export note):** PAUSED since creation (9 Oct 2026). Target: Berufspruefung Wirtschaftsinformatik, May 2028.
 

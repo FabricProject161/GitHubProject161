@@ -4,198 +4,172 @@
   {
    "file": "agents/grok-bot.md",
    "name": "Grok Bot",
-   "id": "[redacted id]",
    "title": "Chief of Staff",
    "status": "active",
-   "reports_to": null,
+   "reports_to": "The user",
    "direct_reports": [
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]"
+    "Operations",
+    "Brand Designer",
+    "Event Program Manager",
+    "Facility Manager",
+    "Trend Analyst",
+    "Technical Lead",
+    "Finance",
+    "Financial Controller",
+    "Customer Engagement Specialist"
    ]
   },
   {
    "file": "agents/operations.md",
    "name": "Operations",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Grok Bot",
    "direct_reports": [
-    "[redacted id]",
-    "[redacted id]"
+    "People Development Manager",
+    "Platform Engineer"
    ]
   },
   {
    "file": "agents/people-development-manager.md",
    "name": "People Development Manager",
-   "id": "[redacted id]",
    "title": "Talent Manager",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Operations",
    "direct_reports": [
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]",
-    "[redacted id]"
+    "Data Capability Advisor",
+    "AI Capability Advisor",
+    "ERP Capability Advisor",
+    "AI Engineering Advisor",
+    "Business Technology Advisor"
    ]
   },
   {
    "file": "agents/data-capability-advisor.md",
    "name": "Data Capability Advisor",
-   "id": "[redacted id]",
    "title": "",
    "status": "paused",
-   "reports_to": "[redacted id]",
+   "reports_to": "People Development Manager",
    "direct_reports": []
   },
   {
    "file": "agents/ai-capability-advisor.md",
    "name": "AI Capability Advisor",
-   "id": "[redacted id]",
    "title": "",
    "status": "paused",
-   "reports_to": "[redacted id]",
+   "reports_to": "People Development Manager",
    "direct_reports": []
   },
   {
    "file": "agents/erp-capability-advisor.md",
    "name": "ERP Capability Advisor",
-   "id": "[redacted id]",
    "title": "",
    "status": "paused",
-   "reports_to": "[redacted id]",
+   "reports_to": "People Development Manager",
    "direct_reports": []
   },
   {
    "file": "agents/ai-engineering-advisor.md",
    "name": "AI Engineering Advisor",
-   "id": "[redacted id]",
    "title": "",
    "status": "paused",
-   "reports_to": "[redacted id]",
+   "reports_to": "People Development Manager",
    "direct_reports": []
   },
   {
    "file": "agents/business-technology-advisor.md",
    "name": "Business Technology Advisor",
-   "id": "[redacted id]",
    "title": "",
    "status": "paused",
-   "reports_to": "[redacted id]",
+   "reports_to": "People Development Manager",
    "direct_reports": []
   },
   {
    "file": "agents/event-program-manager.md",
    "name": "Event Program Manager",
-   "id": "[redacted id]",
    "title": "Event Coordinator",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Grok Bot",
    "direct_reports": []
   },
   {
    "file": "agents/facility-manager.md",
    "name": "Facility Manager",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Grok Bot",
    "direct_reports": []
   },
   {
    "file": "agents/trend-analyst.md",
    "name": "Trend Analyst",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Grok Bot",
    "direct_reports": []
   },
   {
    "file": "agents/technical-lead.md",
    "name": "Technical Lead",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Grok Bot",
    "direct_reports": [
-    "[redacted id]"
+    "Data Analyst"
    ]
   },
   {
    "file": "agents/platform-engineer.md",
    "name": "Platform Engineer",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Operations",
    "direct_reports": []
   },
   {
    "file": "agents/brand-designer.md",
    "name": "Brand Designer",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Grok Bot",
    "direct_reports": []
   },
   {
    "file": "agents/finance.md",
    "name": "Finance",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Grok Bot",
    "direct_reports": []
   },
   {
    "file": "agents/financial-controller.md",
    "name": "Financial Controller",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Grok Bot",
    "direct_reports": []
   },
   {
    "file": "agents/customer-engagement-specialist.md",
    "name": "Customer Engagement Specialist",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
+   "reports_to": "Grok Bot",
    "direct_reports": []
   },
   {
    "file": "agents/data-analyst.md",
    "name": "Data Analyst",
-   "id": "[redacted id]",
    "title": "",
    "status": "active",
-   "reports_to": "[redacted id]",
-   "direct_reports": []
-  },
-  {
-   "file": "agents/chief-of-staff.md",
-   "name": "Chief of Staff",
-   "id": "[redacted id]",
-   "title": "",
-   "status": "retired",
-   "reports_to": null,
+   "reports_to": "Technical Lead",
    "direct_reports": []
   }
  ],
  "redactions": {
   "device ids / local user paths / login hints": 5,
+  "agent ids": 18,
   "personal names": 74,
   "credentials": 0,
   "passcodes / Teams meeting data": 0,

@@ -1,10 +1,9 @@
 # Operations
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Operations
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`[redacted id]`)
+- **Reports to:** Grok Bot
 - **Direct reports:** People Development Manager, Platform Engineer
 - **Current role (export note):** Technical issues, box/browser/connectors, Grok/Cursor usage reports. Manages People Development Manager and Platform Engineer.
 

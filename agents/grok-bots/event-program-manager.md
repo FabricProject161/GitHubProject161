@@ -1,10 +1,9 @@
 # Event Program Manager
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Event Program Manager
 - **Title:** Event Coordinator _(legacy title, older agent name)_
 - **Status:** active
-- **Reports to:** Grok Bot (`[redacted id]`)
+- **Reports to:** Grok Bot
 - **Direct reports:** -
 - **Current role (export note):** Sole owner of calendar writes; Staudenschiessen E2E tests.
 

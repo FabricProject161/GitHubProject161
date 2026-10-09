@@ -1,10 +1,9 @@
 # Trend Analyst
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Trend Analyst
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`[redacted id]`)
+- **Reports to:** Grok Bot
 - **Direct reports:** -
 - **Current role (export note):** Etsy trend briefs.
 

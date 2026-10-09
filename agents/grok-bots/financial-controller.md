@@ -1,10 +1,9 @@
 # Financial Controller
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Financial Controller
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`[redacted id]`)
+- **Reports to:** Grok Bot
 - **Direct reports:** -
 - **Current role (export note):** Money: invoices, billing, payments.
 

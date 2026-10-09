@@ -1,10 +1,9 @@
 # Finance
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Finance
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`[redacted id]`)
+- **Reports to:** Grok Bot
 - **Direct reports:** -
 - **Current role (export note):** Taxes / eTAX Aargau.
 

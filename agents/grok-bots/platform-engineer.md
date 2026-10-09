@@ -1,10 +1,9 @@
 # Platform Engineer
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Platform Engineer
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Operations (`[redacted id]`)
+- **Reports to:** Operations
 - **Direct reports:** -
 - **Current role (export note):** Non-financial storage; owns agent-profile topics (export, redaction, upkeep) since 9 Oct 2026.
 

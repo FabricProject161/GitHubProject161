@@ -1,6 +1,5 @@
 # Grok Bot
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Grok Bot
 - **Title:** Chief of Staff
 - **Status:** active

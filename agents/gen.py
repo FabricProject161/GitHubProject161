@@ -12,37 +12,15 @@ from collections import Counter
 
 BASE = '/home/box/agent-data/agents'
 EXPORT_DATE = datetime.date.today().strftime('%-d %b %Y')
-SKIP = {'[redacted id]'}          # empty orphan "New Bot"
+# Org config (agent ids, reporting lines, role notes) lives in a box-only file so no agent id
+# appears in the export or in this script.
+ORG_FILE = '/workspace/.agent-export-org.json'
+_cfg = json.load(open(ORG_FILE, encoding='utf-8'))
+SKIP = set(_cfg['SKIP'])
+GROK, COS_OLD, OPS, PDM, ERP = (_cfg[k] for k in ('GROK', 'COS_OLD', 'OPS', 'PDM', 'ERP'))
+ADVISORS = _cfg['ADVISORS']
+ORG = {k: tuple(v) for k, v in _cfg['ORG'].items()}  # id -> (reports_to, role/status note)
 
-# ---- current org (as of 9 Oct 2026) -------------------------------------------------
-GROK = '[redacted id]'
-COS_OLD = '[redacted id]'
-OPS = '[redacted id]'
-PDM = '[redacted id]'
-ERP = '[redacted id]'
-ADVISORS = ['[redacted id]', '[redacted id]', ERP,
-            '[redacted id]', '[redacted id]']
-ORG = {  # id -> (reports_to, role/status note)
-    GROK: (None, 'Chief of Staff and router (took over from Chief of Staff on 9 Oct 2026). Routes work, keeps the approval diet, runs the weekday end-of-day agent rollup.'),
-    COS_OLD: (None, 'RETIRED: replaced by Grok Bot as Chief of Staff on 9 Oct 2026. Routines paused; route all Chief of Staff matters to Grok Bot.'),
-    OPS: (GROK, 'Technical issues, box/browser/connectors, Grok/Cursor usage reports. Manages People Development Manager and Platform Engineer.'),
-    PDM: (OPS, 'Talent system. Manages the five Advisors (all paused).'),
-    '[redacted id]': (OPS, 'Non-financial storage; owns agent-profile topics (export, redaction, upkeep) since 9 Oct 2026.'),
-    '[redacted id]': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
-    '[redacted id]': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
-    ERP: (PDM, 'PAUSED (mentoring) since 3 Oct 2026 until the user says resume. No direct reports.'),
-    '[redacted id]': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
-    '[redacted id]': (PDM, 'PAUSED since creation (9 Oct 2026). Target: Berufspruefung Wirtschaftsinformatik, May 2028.'),
-    '[redacted id]': ('[redacted id]', 'CV/Lebenslauf work (FYI to People Development Manager) and Staudenschiessen reporting.'),
-    '[redacted id]': (GROK, 'Visual design (reports to Grok Bot since 10 Oct 2026).'),
-    '[redacted id]': (GROK, 'Sole owner of calendar writes; Staudenschiessen E2E tests.'),
-    '[redacted id]': (GROK, 'Home topics.'),
-    '[redacted id]': (GROK, 'Etsy trend briefs.'),
-    '[redacted id]': (GROK, 'Staudenschiessen site; owns FabricProject161/GitHub work (from 9 Oct 2026). Manages Data Analyst (since 10 Oct 2026).'),
-    '[redacted id]': (GROK, 'Taxes / eTAX Aargau.'),
-    '[redacted id]': (GROK, 'Money: invoices, billing, payments.'),
-    '[redacted id]': (GROK, 'Mail/comms, morning inbox digest, rejection follow-ups.'),
-}
 # Direct renames: old agent names that still appear inside profile descriptions.
 RENAMES = [
     ('Wirtschaftsinformatik Mentor', 'Business Technology Advisor'),
@@ -114,21 +92,26 @@ RULES = [(c, re.compile(p), r) for c, p, r in RULES]
 AGENT_ID = re.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
 COUNTS = Counter()
 
+ID_PAREN = re.compile(r'\s*\((?:id:?\s*)?[0-9a-f]{8}(?:-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|…|\.\.\.)?\)')
+ID_INLINE = re.compile(r'(?i)[,;]?\s*\bid:?\s*[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
+
+def strip_ids(text):
+    """Remove agent ids: '(id <uuid>)', '(<uuid>)', '(<8-hex>)', 'id <uuid>', then any bare uuid."""
+    for rx in (ID_PAREN, ID_INLINE):
+        text, n = rx.subn('', text); COUNTS['agent ids'] += n
+    text, n = AGENT_ID.subn('[redacted id]', text); COUNTS['agent ids'] += n
+    return text
+
 def redact(text):
-    # protect agent ids (kept on purpose) from the number rules
-    ids = {}
-    def keep(m):
-        k = f'\x00{len(ids)}\x00'; ids[k] = m.group(0); return k
-    # machineId uuids must still be redacted, so handle them before protecting ids
+    # machineId uuids are counted as device ids first, then all other ids are stripped
     for cat, rx, rep in RULES:
         if 'machineId' in rx.pattern:
             text, n = rx.subn(rep, text); COUNTS[cat] += n
-    text = AGENT_ID.sub(keep, text)
+    text = strip_ids(text)
     text = apply_names(text)
     for cat, rx, rep in RULES:
         if 'machineId' in rx.pattern: continue
         text, n = rx.subn(rep, text); COUNTS[cat] += n
-    for k, v in ids.items(): text = text.replace(k, v)
     return text
 
 def rename(text):
@@ -136,7 +119,7 @@ def rename(text):
         text = re.sub(r'(?<![\w-])' + re.escape(old) + r'(?![\w-])', new, text)
     text = re.sub(r'(?<![\w(])(?<!Grok Bot, )Chief of Staff(?! \(retired)', 'Grok Bot (Chief of Staff)', text)
     text = text.replace(COS_OLD, GROK)  # references to the old CoS now point at Grok Bot
-    text = text.replace('Application Manager D365 (id ' + ERP, 'ERP Capability Advisor (id ' + ERP)
+    text = text.replace('Application Manager D365 (id ' + ERP, 'ERP Capability Advisor (id ' + ERP)  # ids stripped later by redact()
     return text
 
 def kebab(n): return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', n.lower().replace('&', ' '))).strip('-')
@@ -160,10 +143,10 @@ for i in order:
     status = 'retired' if i == COS_OLD else ('paused' if 'PAUSED' in note else 'active')
     desc = redact(rename(a.get('description', '') or ''))
     md = [f'# {name}' + (' (retired)' if i == COS_OLD else ''), '',
-          f'- **Agent ID:** `{i}`', f'- **Name:** {name}',
+          f'- **Name:** {name}',
           f'- **Title:** ' + (redact(title) + (' _(legacy title, older agent name)_' if any(title == o for o, _ in RENAMES) else '') if title else '_(empty in profile.json)_'),
           f'- **Status:** {status}',
-          f'- **Reports to:** ' + (f'{name_of[rep_to]} (`{rep_to}`)' if rep_to else ('The user' if i == GROK else '-')),
+          f'- **Reports to:** ' + (name_of[rep_to] if rep_to else ('The user' if i == GROK else '-')),
           f'- **Direct reports:** ' + (', '.join(reports) if reports else '-'),
           f'- **Current role (export note):** {redact(note)}', '',
           '## Description / instructions (from profile.json)', '',
@@ -171,23 +154,25 @@ for i in order:
           '---', f'_Source: `profile.json` on the Grok Bot box. Exported {EXPORT_DATE} (Europe/Zurich). Older agent names in the description are shown with their current names; sensitive values are replaced with [redacted]. Profile only: no routines, memory, settings or transcripts._', '']
     fn = kebab(name) + '.md'
     open('agents/' + fn, 'w').write('\n'.join(md))
-    index.append({'file': 'agents/' + fn, 'name': name, 'id': i, 'title': title, 'status': status,
-                  'reports_to': rep_to, 'direct_reports': [k for k, (r, _) in ORG.items() if r == i and k in name_of]})
+    index.append({'file': 'agents/' + fn, 'name': name, 'title': title, 'status': status,
+                  'reports_to': name_of.get(rep_to) if rep_to else ('The user' if i == GROK else None),
+                  'direct_reports': reports, '_grok': i == GROK})
 
 # README
-rows = '\n'.join(f"| {n+1} | {e['name']} | {e['status']} | {name_of.get(e['reports_to'], 'The user' if e['id']==GROK else '-')} | `{e['id']}` | [{e['file']}]({e['file']}) |" for n, e in enumerate(index))
+for e in index: e.pop('_grok', None)
+rows = '\n'.join(f"| {n+1} | {e['name']} | {e['status']} | {e['reports_to'] or '-'} | [{e['file']}]({e['file']}) |" for n, e in enumerate(index))
 cats = '\n'.join(f'- {c}: {n}' for c, n in sorted(COUNTS.items()) if n) or '- none'
 readme = f"""# Agent profiles export
 
 **Date:** {EXPORT_DATE} (Europe/Zurich)
 **Exported for:** The user, generated by Grok Bot (Chief of Staff)
-**Scope:** agent profiles only (id, name, title, status, reporting line, description). Routines, memory notes, settings, transcripts and internal metadata are not included.
+**Scope:** agent profiles only (name, title, status, reporting line, description; no agent ids). Routines, memory notes, settings, transcripts and internal metadata are not included.
 
 _This index is named `AGENTS-README.md` because this folder already has its own `README.md` (the GitHubProject161 repository readme), which is left untouched._
 
 ## Org and reporting lines (as of 10 Oct 2026)
 
-- **Grok Bot** (`{GROK}`) is Chief of Staff and router. It replaced the former Chief of Staff agent (`{COS_OLD}`, now retired, routines paused) on 9 Oct 2026.
+- **Grok Bot** is Chief of Staff and router. It replaced the former Chief of Staff agent (now retired, routines paused) on 9 Oct 2026.
 - **Operations** reports to Grok Bot and manages **People Development Manager** and **Platform Engineer**.
 - **People Development Manager** manages the Advisors: Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor. **All Advisors are paused** (since 3 Oct 2026; Business Technology Advisor since its creation on 9 Oct) until the user says resume.
 - **Technical Lead** manages **Data Analyst**. ERP Capability Advisor has no direct reports.
@@ -195,20 +180,20 @@ _This index is named `AGENTS-README.md` because this folder already has its own 
 
 ## Agents ({len(index)})
 
-| # | Agent | Status | Reports to | ID | File |
-|---|---|---|---|---|---|
+| # | Agent | Status | Reports to | File |
+|---|---|---|---|---|
 {rows}
 
 ## Notes
 
 - **Source of truth:** `profile.json` of each agent on the Grok Bot box, read-only. Names are the current names.
-- **Renamed agents:** older names inside descriptions are replaced by the current names ({', '.join(f'{o} → {n}' for o, n in RENAMES)}; Chief of Staff → Grok Bot (Chief of Staff), with the old Chief of Staff id replaced by Grok Bot's id; Application Manager D365 → ERP Capability Advisor where it is given with that agent's id). Two agents still carry an older value in their profile *title* field (Event Program Manager: "Event Coordinator"; People Development Manager: "Talent Manager"); it is shown and flagged as legacy.
+- **Renamed agents:** older names inside descriptions are replaced by the current names ({', '.join(f'{o} → {n}' for o, n in RENAMES)}; Chief of Staff → Grok Bot (Chief of Staff); Application Manager D365 → ERP Capability Advisor). Two agents still carry an older value in their profile *title* field (Event Program Manager: "Event Coordinator"; People Development Manager: "Talent Manager"); it is shown and flagged as legacy.
 - **Legacy aliases left as written** (not 1:1 renames, see the org section for the current owner): {', '.join(LEGACY_ALIASES)}.
-- **Not exported:** the empty orphan agent "New Bot" (`[redacted id]`); memory notes (the 6 Oct export's "supplementary role notes" were stale and are dropped); routines, settings, transcripts, metadata.
+- **Not exported:** the empty orphan agent "New Bot"; agent ids (removed from all files); memory notes (the 6 Oct export's "supplementary role notes" were stale and are dropped); routines, settings, transcripts, metadata.
 
 ## Redaction
 
-All exported text passes through `redact()` in `gen.py`: passwords/credentials, passcodes and Teams meeting links/IDs, tokens/PATs/API keys, IBAN/account/card numbers, AHV numbers, policy/customer/invoice numbers, amounts, birth dates, e-mail addresses, phone numbers, street/home address, health/medical details, personal names (replaced with neutral wording such as "the user"), device ids, local Windows user names, personal profile handles and admin login URLs are replaced with `[redacted]`. Agent ids, role descriptions and routing are kept.
+All exported text passes through `redact()` in `gen.py`: passwords/credentials, passcodes and Teams meeting links/IDs, tokens/PATs/API keys, IBAN/account/card numbers, AHV numbers, policy/customer/invoice numbers, amounts, birth dates, e-mail addresses, phone numbers, street/home address, health/medical details, personal names (replaced with neutral wording such as "the user"), device ids, local Windows user names, personal profile handles and admin login URLs are replaced with `[redacted]`. Agent ids are removed everywhere; role descriptions and routing are kept.
 
 Redactions in this export (counts only):
 {cats}

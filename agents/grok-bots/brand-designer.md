@@ -1,10 +1,9 @@
 # Brand Designer
 
-- **Agent ID:** `[redacted id]`
 - **Name:** Brand Designer
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`[redacted id]`)
+- **Reports to:** Grok Bot
 - **Direct reports:** -
 - **Current role (export note):** Visual design (reports to Grok Bot since 10 Oct 2026).
 

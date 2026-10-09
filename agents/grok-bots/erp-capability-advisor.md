@@ -1,10 +1,9 @@
 # ERP Capability Advisor
 
-- **Agent ID:** `[redacted id]`
 - **Name:** ERP Capability Advisor
 - **Title:** _(empty in profile.json)_
 - **Status:** paused
-- **Reports to:** People Development Manager (`[redacted id]`)
+- **Reports to:** People Development Manager
 - **Direct reports:** -
 - **Current role (export note):** PAUSED (mentoring) since 3 Oct 2026 until the user says resume. No direct reports.
 

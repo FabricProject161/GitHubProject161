@@ -1,0 +1,215 @@
+{
+ "exported": "9 Oct 2026",
+ "agents": [
+  {
+   "file": "agents/grok-bot.md",
+   "name": "Grok Bot",
+   "id": "[redacted id]",
+   "title": "Chief of Staff",
+   "status": "active",
+   "reports_to": null,
+   "direct_reports": [
+    "[redacted id]",
+    "[redacted id]",
+    "[redacted id]",
+    "[redacted id]",
+    "[redacted id]",
+    "[redacted id]",
+    "[redacted id]",
+    "[redacted id]"
+   ]
+  },
+  {
+   "file": "agents/operations.md",
+   "name": "Operations",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": [
+    "[redacted id]",
+    "[redacted id]"
+   ]
+  },
+  {
+   "file": "agents/people-development-manager.md",
+   "name": "People Development Manager",
+   "id": "[redacted id]",
+   "title": "Talent Manager",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": [
+    "[redacted id]",
+    "[redacted id]",
+    "[redacted id]",
+    "[redacted id]",
+    "[redacted id]"
+   ]
+  },
+  {
+   "file": "agents/data-capability-advisor.md",
+   "name": "Data Capability Advisor",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "paused",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/ai-capability-advisor.md",
+   "name": "AI Capability Advisor",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "paused",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/erp-capability-advisor.md",
+   "name": "ERP Capability Advisor",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "paused",
+   "reports_to": "[redacted id]",
+   "direct_reports": [
+    "[redacted id]",
+    "[redacted id]"
+   ]
+  },
+  {
+   "file": "agents/ai-engineering-advisor.md",
+   "name": "AI Engineering Advisor",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "paused",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/business-technology-advisor.md",
+   "name": "Business Technology Advisor",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "paused",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/event-program-manager.md",
+   "name": "Event Program Manager",
+   "id": "[redacted id]",
+   "title": "Event Coordinator",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/facility-manager.md",
+   "name": "Facility Manager",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/trend-analyst.md",
+   "name": "Trend Analyst",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/technical-lead.md",
+   "name": "Technical Lead",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/platform-engineer.md",
+   "name": "Platform Engineer",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/brand-designer.md",
+   "name": "Brand Designer",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/finance.md",
+   "name": "Finance",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/financial-controller.md",
+   "name": "Financial Controller",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/customer-engagement-specialist.md",
+   "name": "Customer Engagement Specialist",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/data-analyst.md",
+   "name": "Data Analyst",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "active",
+   "reports_to": "[redacted id]",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/chief-of-staff.md",
+   "name": "Chief of Staff",
+   "id": "[redacted id]",
+   "title": "",
+   "status": "retired",
+   "reports_to": null,
+   "direct_reports": []
+  }
+ ],
+ "redactions": {
+  "device ids / local user paths / login hints": 5,
+  "personal names": 72,
+  "credentials": 0,
+  "passcodes / Teams meeting data": 0,
+  "Teams meeting links": 0,
+  "tokens / PATs / API keys": 0,
+  "IBAN / account numbers": 0,
+  "card numbers": 0,
+  "AHV numbers": 0,
+  "policy / customer numbers": 0,
+  "amounts owed": 0,
+  "birth dates": 0,
+  "private emails": 0,
+  "private phone numbers": 0,
+  "home address": 1,
+  "health / medical details": 0
+ }
+}

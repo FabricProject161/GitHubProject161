@@ -16,21 +16,34 @@ echo "Inserting standard data..."
 for t in sql/seed/*.sql; do
     echo "----------------------------------------"
     echo "Running $t"
-    sqlite3 "$DB" < "$t"
+    sqlite3 "$DB" < "$t" 2>&1 || {
+        echo "Error running $t"
+        exit 1
+    }
 done
 
 echo "Inserting test data..."
 for t in tests/seeds/*.sql; do
-    echo "----------------------------------------"
-    echo "Running $t"
-    sqlite3 "$DB" < "$t"
+    if [ -f "$t" ]; then
+        echo "----------------------------------------"
+        echo "Running $t"
+        sqlite3 "$DB" < "$t" 2>&1 || {
+            echo "Error running $t"
+            exit 1
+        }
+    fi
 done
 
 echo "Running test cases..."
 for t in tests/cases/*.sql; do
-    echo "----------------------------------------"
-    echo "Running $t"
-    sqlite3 "$DB" < "$t"
+    if [ -f "$t" ]; then
+        echo "----------------------------------------"
+        echo "Running $t"
+        sqlite3 "$DB" < "$t" 2>&1 || {
+            echo "Error running $t"
+            exit 1
+        }
+    fi
 done
 
 echo "All tests executed successfully."

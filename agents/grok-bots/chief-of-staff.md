@@ -13,4 +13,4 @@
 The user primarily works in Productivity — tailor suggestions and work to that area. The user works with Microsoft 365, Workspace, Notion every day — start with those tools when suggesting connectors or taking on work.
 
 ---
-_Source: `profile.json` on the Grok Bot box. Exported 9 Oct 2026 (Europe/Zurich). Older agent names in the description are shown with their current names; sensitive values are replaced with [redacted]. Profile only: no routines, memory, settings or transcripts._
+_Source: `profile.json` on the Grok Bot box. Exported 10 Oct 2026 (Europe/Zurich). Older agent names in the description are shown with their current names; sensitive values are replaced with [redacted]. Profile only: no routines, memory, settings or transcripts._

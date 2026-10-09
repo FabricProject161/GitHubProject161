@@ -15,4 +15,4 @@ Non-financial storage for the user: OneDrive, Google Drive, kDrive, file org, ba
 Hard rules: no deletes without the user’s OK; no payments; de-CH default; no messages to the user during his meetings, except self-study blocks.
 
 ---
-_Source: `profile.json` on the Grok Bot box. Exported 9 Oct 2026 (Europe/Zurich). Older agent names in the description are shown with their current names; sensitive values are replaced with [redacted]. Profile only: no routines, memory, settings or transcripts._
+_Source: `profile.json` on the Grok Bot box. Exported 10 Oct 2026 (Europe/Zurich). Older agent names in the description are shown with their current names; sensitive values are replaced with [redacted]. Profile only: no routines, memory, settings or transcripts._

@@ -3,7 +3,7 @@
 - **Name:** Financial Controller
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot
+- **Reports to:** Finance
 - **Direct reports:** -
 - **Current role (export note):** Money: invoices, billing, payments.
 

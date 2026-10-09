@@ -15,7 +15,6 @@
     "Trend Analyst",
     "Technical Lead",
     "Finance",
-    "Financial Controller",
     "Customer Engagement Specialist"
    ]
   },
@@ -140,14 +139,16 @@
    "title": "",
    "status": "active",
    "reports_to": "Grok Bot",
-   "direct_reports": []
+   "direct_reports": [
+    "Financial Controller"
+   ]
   },
   {
    "file": "agents/financial-controller.md",
    "name": "Financial Controller",
    "title": "",
    "status": "active",
-   "reports_to": "Grok Bot",
+   "reports_to": "Finance",
    "direct_reports": []
   },
   {

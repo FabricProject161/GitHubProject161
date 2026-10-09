@@ -175,8 +175,9 @@ _This index is named `AGENTS-README.md` because this folder already has its own 
 - **Grok Bot** is Chief of Staff and router. It replaced the former Chief of Staff agent (now retired, routines paused) on 9 Oct 2026.
 - **Operations** reports to Grok Bot and manages **People Development Manager** and **Platform Engineer**.
 - **People Development Manager** manages the Advisors: Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor. **All Advisors are paused** (since 3 Oct 2026; Business Technology Advisor since its creation on 9 Oct) until the user says resume.
+- **Finance** manages **Financial Controller** (money: invoices, billing, payments).
 - **Technical Lead** manages **Data Analyst**. ERP Capability Advisor has no direct reports.
-- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Brand Designer (visual design), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
+- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Brand Designer (visual design), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Customer Engagement Specialist (mail/comms).
 
 ## Agents ({len(index)})
 

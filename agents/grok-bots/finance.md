@@ -4,8 +4,8 @@
 - **Title:** _(empty in profile.json)_
 - **Status:** active
 - **Reports to:** Grok Bot
-- **Direct reports:** -
-- **Current role (export note):** Taxes / eTAX Aargau.
+- **Direct reports:** Financial Controller
+- **Current role (export note):** Taxes / eTAX Aargau. Manages Financial Controller.
 
 ## Description / instructions (from profile.json)
 

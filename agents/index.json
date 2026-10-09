@@ -171,7 +171,7 @@
  "redactions": {
   "device ids / local user paths / login hints": 5,
   "agent ids": 18,
-  "personal names": 74,
+  "personal names": 73,
   "credentials": 0,
   "passcodes / Teams meeting data": 0,
   "Teams meeting links": 0,

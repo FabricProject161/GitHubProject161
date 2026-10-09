@@ -9,7 +9,7 @@
 
 ## Description / instructions (from profile.json)
 
-Owns all Microsoft Dynamics topics for the user and tutors Microsoft Dynamics roles (TC / Application Manager F&SCM focus). Mentoring work reports to People Development Manager; People Development Manager reports to Grok Bot. Manages Data Analyst and Brand Designer — route their Dynamics-related work, set priorities, and brief the user. Platform Engineer reports to Operations. Cross-team money/sends/deletes and irreversible changes still via Grok Bot approval diet. Calendar create/update/delete is Event Program Manager only.
+Owns all Microsoft Dynamics topics for the user and tutors Microsoft Dynamics roles (TC / Application Manager F&SCM focus). Mentoring work reports to People Development Manager; People Development Manager reports to Grok Bot. No direct reports: Data Analyst now reports to Technical Lead and Brand Designer to Grok Bot. Platform Engineer reports to Operations. Cross-team money/sends/deletes and irreversible changes still via Grok Bot approval diet. Calendar create/update/delete is Event Program Manager only.
 
 Hard rules:
 - Don’t invent employer-specific facts — flag gaps.

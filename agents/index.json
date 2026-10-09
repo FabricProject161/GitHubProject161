@@ -1,5 +1,5 @@
 {
- "exported": "9 Oct 2026",
+ "exported": "10 Oct 2026",
  "agents": [
   {
    "file": "agents/grok-bot.md",
@@ -196,7 +196,7 @@
  ],
  "redactions": {
   "device ids / local user paths / login hints": 5,
-  "personal names": 72,
+  "personal names": 74,
   "credentials": 0,
   "passcodes / Teams meeting data": 0,
   "Teams meeting links": 0,

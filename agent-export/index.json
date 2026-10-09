@@ -1,0 +1,215 @@
+{
+ "exported": "9 Oct 2026",
+ "agents": [
+  {
+   "file": "agents/grok-bot.md",
+   "name": "Grok Bot",
+   "id": "2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002",
+   "title": "Chief of Staff",
+   "status": "active",
+   "reports_to": null,
+   "direct_reports": [
+    "707840f4-7ce9-40db-89fd-5fd00c565761",
+    "0608aa00-e670-4ec9-9373-dcf2422d8116",
+    "07cbd0d6-c0d9-4265-8c84-c4d81a869d4f",
+    "08f94572-112d-457a-a261-40f6ee75ea48",
+    "24401031-b491-454a-b187-a76a981184c2",
+    "ab3f7d68-5e06-4b88-9372-0469ee4a39c9",
+    "cf6743c6-a008-4b55-b76c-eb933601727e",
+    "d13b9f04-8806-4dfa-8404-070e9a7563d6"
+   ]
+  },
+  {
+   "file": "agents/operations.md",
+   "name": "Operations",
+   "id": "707840f4-7ce9-40db-89fd-5fd00c565761",
+   "title": "",
+   "status": "active",
+   "reports_to": "2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002",
+   "direct_reports": [
+    "b78726c6-3f77-4319-b3c4-96c533abc39e",
+    "67da2d65-f653-4781-9455-00ffdb0930c6"
+   ]
+  },
+  {
+   "file": "agents/people-development-manager.md",
+   "name": "People Development Manager",
+   "id": "b78726c6-3f77-4319-b3c4-96c533abc39e",
+   "title": "Talent Manager",
+   "status": "active",
+   "reports_to": "707840f4-7ce9-40db-89fd-5fd00c565761",
+   "direct_reports": [
+    "46bfc12c-30bb-4617-9d66-32ef9481cdfd",
+    "79259a1d-3a97-4c67-9d57-de2a64d5422e",
+    "e5d07ba9-995c-4e4d-8243-ebdda698ae9e",
+    "0eb5d610-f6ea-4693-b9be-4a1bf94497d3",
+    "1cf03c62-be41-4b54-85ea-69cb45412def"
+   ]
+  },
+  {
+   "file": "agents/data-capability-advisor.md",
+   "name": "Data Capability Advisor",
+   "id": "46bfc12c-30bb-4617-9d66-32ef9481cdfd",
+   "title": "",
+   "status": "paused",
+   "reports_to": "b78726c6-3f77-4319-b3c4-96c533abc39e",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/ai-capability-advisor.md",
+   "name": "AI Capability Advisor",
+   "id": "79259a1d-3a97-4c67-9d57-de2a64d5422e",
+   "title": "",
+   "status": "paused",
+   "reports_to": "b78726c6-3f77-4319-b3c4-96c533abc39e",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/erp-capability-advisor.md",
+   "name": "ERP Capability Advisor",
+   "id": "e5d07ba9-995c-4e4d-8243-ebdda698ae9e",
+   "title": "",
+   "status": "paused",
+   "reports_to": "b78726c6-3f77-4319-b3c4-96c533abc39e",
+   "direct_reports": [
+    "d541c6af-2c31-4b61-9f91-28d2a002db9b",
+    "92f61e30-653a-4675-b180-35db1ab16813"
+   ]
+  },
+  {
+   "file": "agents/ai-engineering-advisor.md",
+   "name": "AI Engineering Advisor",
+   "id": "0eb5d610-f6ea-4693-b9be-4a1bf94497d3",
+   "title": "",
+   "status": "paused",
+   "reports_to": "b78726c6-3f77-4319-b3c4-96c533abc39e",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/business-technology-advisor.md",
+   "name": "Business Technology Advisor",
+   "id": "1cf03c62-be41-4b54-85ea-69cb45412def",
+   "title": "",
+   "status": "paused",
+   "reports_to": "b78726c6-3f77-4319-b3c4-96c533abc39e",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/event-program-manager.md",
+   "name": "Event Program Manager",
+   "id": "0608aa00-e670-4ec9-9373-dcf2422d8116",
+   "title": "Event Coordinator",
+   "status": "active",
+   "reports_to": "2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/facility-manager.md",
+   "name": "Facility Manager",
+   "id": "07cbd0d6-c0d9-4265-8c84-c4d81a869d4f",
+   "title": "",
+   "status": "active",
+   "reports_to": "2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/trend-analyst.md",
+   "name": "Trend Analyst",
+   "id": "08f94572-112d-457a-a261-40f6ee75ea48",
+   "title": "",
+   "status": "active",
+   "reports_to": "2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/technical-lead.md",
+   "name": "Technical Lead",
+   "id": "24401031-b491-454a-b187-a76a981184c2",
+   "title": "",
+   "status": "active",
+   "reports_to": "2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/platform-engineer.md",
+   "name": "Platform Engineer",
+   "id": "67da2d65-f653-4781-9455-00ffdb0930c6",
+   "title": "",
+   "status": "active",
+   "reports_to": "707840f4-7ce9-40db-89fd-5fd00c565761",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/brand-designer.md",
+   "name": "Brand Designer",
+   "id": "92f61e30-653a-4675-b180-35db1ab16813",
+   "title": "",
+   "status": "active",
+   "reports_to": "e5d07ba9-995c-4e4d-8243-ebdda698ae9e",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/finance.md",
+   "name": "Finance",
+   "id": "ab3f7d68-5e06-4b88-9372-0469ee4a39c9",
+   "title": "",
+   "status": "active",
+   "reports_to": "2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/financial-controller.md",
+   "name": "Financial Controller",
+   "id": "cf6743c6-a008-4b55-b76c-eb933601727e",
+   "title": "",
+   "status": "active",
+   "reports_to": "2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/customer-engagement-specialist.md",
+   "name": "Customer Engagement Specialist",
+   "id": "d13b9f04-8806-4dfa-8404-070e9a7563d6",
+   "title": "",
+   "status": "active",
+   "reports_to": "2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/data-analyst.md",
+   "name": "Data Analyst",
+   "id": "d541c6af-2c31-4b61-9f91-28d2a002db9b",
+   "title": "",
+   "status": "active",
+   "reports_to": "e5d07ba9-995c-4e4d-8243-ebdda698ae9e",
+   "direct_reports": []
+  },
+  {
+   "file": "agents/chief-of-staff.md",
+   "name": "Chief of Staff",
+   "id": "46aaa4b2-c5d4-44f6-abc0-842311a770bf",
+   "title": "",
+   "status": "retired",
+   "reports_to": null,
+   "direct_reports": []
+  }
+ ],
+ "redactions": {
+  "device ids / local user paths / login hints": 5,
+  "personal names": 72,
+  "credentials": 0,
+  "passcodes / Teams meeting data": 0,
+  "Teams meeting links": 0,
+  "tokens / PATs / API keys": 0,
+  "IBAN / account numbers": 0,
+  "card numbers": 0,
+  "AHV numbers": 0,
+  "policy / customer numbers": 0,
+  "amounts owed": 0,
+  "birth dates": 0,
+  "private emails": 0,
+  "private phone numbers": 0,
+  "home address": 1,
+  "health / medical details": 0
+ }
+}

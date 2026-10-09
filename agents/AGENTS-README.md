@@ -6,13 +6,13 @@
 
 _This index is named `AGENTS-README.md` because this folder already has its own `README.md` (the GitHubProject161 repository readme), which is left untouched._
 
-## Org and reporting lines (as of 9 Oct 2026)
+## Org and reporting lines (as of 10 Oct 2026)
 
 - **Grok Bot** (`2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002`) is Chief of Staff and router. It replaced the former Chief of Staff agent (`46aaa4b2-c5d4-44f6-abc0-842311a770bf`, now retired, routines paused) on 9 Oct 2026.
 - **Operations** reports to Grok Bot and manages **People Development Manager** and **Platform Engineer**.
 - **People Development Manager** manages the Advisors: Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor. **All Advisors are paused** (since 3 Oct 2026; Business Technology Advisor since its creation on 9 Oct) until the user says resume.
-- **ERP Capability Advisor** manages **Data Analyst** and **Brand Designer**.
-- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
+- **ERP Capability Advisor** manages **Data Analyst**.
+- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Brand Designer (visual design), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
 
 ## Agents (19)
 
@@ -31,7 +31,7 @@ _This index is named `AGENTS-README.md` because this folder already has its own 
 | 11 | Trend Analyst | active | Grok Bot | `08f94572-112d-457a-a261-40f6ee75ea48` | [agents/trend-analyst.md](agents/trend-analyst.md) |
 | 12 | Technical Lead | active | Grok Bot | `24401031-b491-454a-b187-a76a981184c2` | [agents/technical-lead.md](agents/technical-lead.md) |
 | 13 | Platform Engineer | active | Operations | `67da2d65-f653-4781-9455-00ffdb0930c6` | [agents/platform-engineer.md](agents/platform-engineer.md) |
-| 14 | Brand Designer | active | ERP Capability Advisor | `92f61e30-653a-4675-b180-35db1ab16813` | [agents/brand-designer.md](agents/brand-designer.md) |
+| 14 | Brand Designer | active | Grok Bot | `92f61e30-653a-4675-b180-35db1ab16813` | [agents/brand-designer.md](agents/brand-designer.md) |
 | 15 | Finance | active | Grok Bot | `ab3f7d68-5e06-4b88-9372-0469ee4a39c9` | [agents/finance.md](agents/finance.md) |
 | 16 | Financial Controller | active | Grok Bot | `cf6743c6-a008-4b55-b76c-eb933601727e` | [agents/financial-controller.md](agents/financial-controller.md) |
 | 17 | Customer Engagement Specialist | active | Grok Bot | `d13b9f04-8806-4dfa-8404-070e9a7563d6` | [agents/customer-engagement-specialist.md](agents/customer-engagement-specialist.md) |

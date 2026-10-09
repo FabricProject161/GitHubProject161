@@ -5,8 +5,8 @@
 - **Title:** _(empty in profile.json)_
 - **Status:** paused
 - **Reports to:** People Development Manager (`b78726c6-3f77-4319-b3c4-96c533abc39e`)
-- **Direct reports:** Data Analyst, Brand Designer
-- **Current role (export note):** PAUSED (mentoring) since 3 Oct 2026 until the user says resume. Manages Data Analyst and Brand Designer.
+- **Direct reports:** Data Analyst
+- **Current role (export note):** PAUSED (mentoring) since 3 Oct 2026 until the user says resume. Manages Data Analyst.
 
 ## Description / instructions (from profile.json)
 

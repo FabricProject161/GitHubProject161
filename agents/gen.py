@@ -30,11 +30,11 @@ ORG = {  # id -> (reports_to, role/status note)
     '67da2d65-f653-4781-9455-00ffdb0930c6': (OPS, 'Non-financial storage; owns agent-profile topics (export, redaction, upkeep) since 9 Oct 2026.'),
     '46bfc12c-30bb-4617-9d66-32ef9481cdfd': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
     '79259a1d-3a97-4c67-9d57-de2a64d5422e': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
-    ERP: (PDM, 'PAUSED (mentoring) since 3 Oct 2026 until the user says resume. Manages Data Analyst and Brand Designer.'),
+    ERP: (PDM, 'PAUSED (mentoring) since 3 Oct 2026 until the user says resume. Manages Data Analyst.'),
     '0eb5d610-f6ea-4693-b9be-4a1bf94497d3': (PDM, 'PAUSED since 3 Oct 2026 until the user says resume.'),
     '1cf03c62-be41-4b54-85ea-69cb45412def': (PDM, 'PAUSED since creation (9 Oct 2026). Target: Berufspruefung Wirtschaftsinformatik, May 2028.'),
     'd541c6af-2c31-4b61-9f91-28d2a002db9b': (ERP, 'CV/Lebenslauf work (FYI to People Development Manager) and Staudenschiessen reporting.'),
-    '92f61e30-653a-4675-b180-35db1ab16813': (ERP, 'Visual design.'),
+    '92f61e30-653a-4675-b180-35db1ab16813': (GROK, 'Visual design (reports to Grok Bot since 10 Oct 2026).'),
     '0608aa00-e670-4ec9-9373-dcf2422d8116': (GROK, 'Sole owner of calendar writes; Staudenschiessen E2E tests.'),
     '07cbd0d6-c0d9-4265-8c84-c4d81a869d4f': (GROK, 'Home topics.'),
     '08f94572-112d-457a-a261-40f6ee75ea48': (GROK, 'Etsy trend briefs.'),
@@ -134,7 +134,7 @@ def redact(text):
 def rename(text):
     for old, new in RENAMES:
         text = re.sub(r'(?<![\w-])' + re.escape(old) + r'(?![\w-])', new, text)
-    text = re.sub(r'(?<![\w(])Chief of Staff(?! \(retired)', 'Grok Bot (Chief of Staff)', text)
+    text = re.sub(r'(?<![\w(])(?<!Grok Bot, )Chief of Staff(?! \(retired)', 'Grok Bot (Chief of Staff)', text)
     text = text.replace(COS_OLD, GROK)  # references to the old CoS now point at Grok Bot
     text = text.replace('Application Manager D365 (id ' + ERP, 'ERP Capability Advisor (id ' + ERP)
     return text
@@ -185,13 +185,13 @@ readme = f"""# Agent profiles export
 
 _This index is named `AGENTS-README.md` because this folder already has its own `README.md` (the GitHubProject161 repository readme), which is left untouched._
 
-## Org and reporting lines (as of 9 Oct 2026)
+## Org and reporting lines (as of 10 Oct 2026)
 
 - **Grok Bot** (`{GROK}`) is Chief of Staff and router. It replaced the former Chief of Staff agent (`{COS_OLD}`, now retired, routines paused) on 9 Oct 2026.
 - **Operations** reports to Grok Bot and manages **People Development Manager** and **Platform Engineer**.
 - **People Development Manager** manages the Advisors: Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor. **All Advisors are paused** (since 3 Oct 2026; Business Technology Advisor since its creation on 9 Oct) until the user says resume.
-- **ERP Capability Advisor** manages **Data Analyst** and **Brand Designer**.
-- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
+- **ERP Capability Advisor** manages **Data Analyst**.
+- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Brand Designer (visual design), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
 
 ## Agents ({len(index)})
 

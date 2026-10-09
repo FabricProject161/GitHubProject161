@@ -1,10 +1,9 @@
 # Facility Manager
 
-- **Agent ID:** `07cbd0d6-c0d9-4265-8c84-c4d81a869d4f`
 - **Name:** Facility Manager
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002`)
+- **Reports to:** Grok Bot
 - **Direct reports:** -
 - **Current role (export note):** Home topics.
 

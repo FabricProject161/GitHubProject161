@@ -1,12 +1,11 @@
 # Finance
 
-- **Agent ID:** `ab3f7d68-5e06-4b88-9372-0469ee4a39c9`
 - **Name:** Finance
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002`)
-- **Direct reports:** -
-- **Current role (export note):** Taxes / eTAX Aargau.
+- **Reports to:** Grok Bot
+- **Direct reports:** Financial Controller
+- **Current role (export note):** Taxes / eTAX Aargau. Manages Financial Controller.
 
 ## Description / instructions (from profile.json)
 

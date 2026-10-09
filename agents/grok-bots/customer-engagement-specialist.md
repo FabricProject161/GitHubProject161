@@ -1,10 +1,9 @@
 # Customer Engagement Specialist
 
-- **Agent ID:** `d13b9f04-8806-4dfa-8404-070e9a7563d6`
 - **Name:** Customer Engagement Specialist
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002`)
+- **Reports to:** Grok Bot
 - **Direct reports:** -
 - **Current role (export note):** Mail/comms, morning inbox digest, rejection follow-ups.
 

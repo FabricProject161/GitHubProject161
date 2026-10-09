@@ -1,10 +1,9 @@
 # Financial Controller
 
-- **Agent ID:** `cf6743c6-a008-4b55-b76c-eb933601727e`
 - **Name:** Financial Controller
 - **Title:** _(empty in profile.json)_
 - **Status:** active
-- **Reports to:** Grok Bot (`2caf25e5-6aea-4fc9-83f3-c7b0cfbf3002`)
+- **Reports to:** Finance
 - **Direct reports:** -
 - **Current role (export note):** Money: invoices, billing, payments.
 

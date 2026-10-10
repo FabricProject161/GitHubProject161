@@ -1,3 +1,11 @@
+-- Fresh databases have the table but no active parameter row. Every dictionary
+-- seed updates that row, so create it before touching category_id.
+INSERT INTO dictionary_parameters (expired)
+SELECT NULL
+WHERE NOT EXISTS (
+    SELECT 1 FROM dictionary_parameters WHERE expired IS NULL
+);
+
 DELETE FROM dictionaries WHERE id = (SELECT category_id FROM dictionary_parameters WHERE expired IS NULL LIMIT 1);
 
 INSERT INTO dictionaries DEFAULT VALUES;

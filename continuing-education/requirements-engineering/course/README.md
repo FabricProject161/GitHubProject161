@@ -36,7 +36,7 @@ Lernziel · Typische Aufgabenstellungen · Theorie kompakt · Beispiel · Schrit
 
 ### Fall 1: Online-Anmeldung «Staudenschlacht»
 
-Aufgaben: [RE_Uebung_Anmeldung_Aufgaben.md](../staudenschiessen-anmeldung/RE_Uebung_Anmeldung_Aufgaben.md) · Musterlösung: [RE_Uebung_Anmeldung_Musterloesung.md](../staudenschiessen-anmeldung/RE_Uebung_Anmeldung_Musterloesung.md)
+Aufgaben: [RE_Uebung_Anmeldung_Aufgaben.md](../marksman-event-registration/RE_Uebung_Anmeldung_Aufgaben.md) · Musterlösung: [RE_Uebung_Anmeldung_Musterloesung.md](../marksman-event-registration/RE_Uebung_Anmeldung_Musterloesung.md)
 
 | Aufgabe im Fall | Punkte | ≈ Min. | Kursordner |
 |---|---|---|---|

@@ -38,7 +38,7 @@ ORG = {  # id -> (reports_to, role/status note)
     '0608aa00-e670-4ec9-9373-dcf2422d8116': (GROK, 'Sole owner of calendar writes; Staudenschiessen E2E tests.'),
     '07cbd0d6-c0d9-4265-8c84-c4d81a869d4f': (GROK, 'Home topics.'),
     '08f94572-112d-457a-a261-40f6ee75ea48': (GROK, 'Etsy trend briefs.'),
-    '24401031-b491-454a-b187-a76a981184c2': (GROK, 'Staudenschiessen site; owns FabricProject161/GitHub work (from 9 Oct 2026).'),
+    '24401031-b491-454a-b187-a76a981184c2': (GROK, 'Staudenschiessen site; owns kuettel-labs/GitHub work (from 9 Oct 2026).'),
     'ab3f7d68-5e06-4b88-9372-0469ee4a39c9': (GROK, 'Taxes / eTAX Aargau.'),
     'cf6743c6-a008-4b55-b76c-eb933601727e': (GROK, 'Money: invoices, billing, payments.'),
     'd13b9f04-8806-4dfa-8404-070e9a7563d6': (GROK, 'Mail/comms, morning inbox digest, rejection follow-ups.'),
@@ -173,7 +173,7 @@ _This index is named `AGENTS-README.md` because this folder already has its own 
 - **Operations** reports to Grok Bot and manages **People Development Manager** and **Platform Engineer**.
 - **People Development Manager** manages the Advisors: Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor. **All Advisors are paused** (since 3 Oct 2026; Business Technology Advisor since its creation on 9 Oct) until Dani says resume.
 - **ERP Capability Advisor** manages **Data Analyst** and **Brand Designer**.
-- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
+- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Facility Manager, Trend Analyst, Technical Lead (owns kuettel-labs/GitHub work), Finance (taxes/eTAX), Financial Controller (money), Customer Engagement Specialist (mail/comms).
 
 ## Agents ({len(index)})
 

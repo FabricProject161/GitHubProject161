@@ -1,3 +1,9 @@
+INSERT INTO dictionary_parameters (expired)
+SELECT NULL
+WHERE NOT EXISTS (
+    SELECT 1 FROM dictionary_parameters WHERE expired IS NULL
+);
+
 DELETE FROM dictionaries WHERE id = (SELECT discipline_id FROM dictionary_parameters WHERE expired IS NULL LIMIT 1);
 
 INSERT INTO dictionaries DEFAULT VALUES;

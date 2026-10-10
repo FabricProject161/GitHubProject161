@@ -32,7 +32,7 @@
   {
    "file": "agents/people-development-manager.md",
    "name": "People Development Manager",
-   "title": "Talent Manager",
+   "title": "People Development Manager",
    "status": "active",
    "reports_to": "Operations",
    "direct_reports": [
@@ -171,7 +171,7 @@
  "redactions": {
   "device ids / local user paths / login hints": 5,
   "agent ids": 18,
-  "personal names": 73,
+  "personal names": 76,
   "credentials": 0,
   "passcodes / Teams meeting data": 0,
   "Teams meeting links": 0,

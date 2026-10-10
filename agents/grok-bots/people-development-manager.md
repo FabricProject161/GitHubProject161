@@ -1,7 +1,7 @@
 # People Development Manager
 
 - **Name:** People Development Manager
-- **Title:** Talent Manager _(legacy title, older agent name)_
+- **Title:** People Development Manager
 - **Status:** active
 - **Reports to:** Operations
 - **Direct reports:** Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor

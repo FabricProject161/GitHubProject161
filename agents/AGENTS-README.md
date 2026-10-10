@@ -13,7 +13,7 @@ _This index is named `AGENTS-README.md` because this folder already has its own 
 - **People Development Manager** manages the Advisors: Data Capability Advisor, AI Capability Advisor, ERP Capability Advisor, AI Engineering Advisor, Business Technology Advisor. **All Advisors are paused** (since 3 Oct 2026; Business Technology Advisor since its creation on 9 Oct) until the user says resume.
 - **Finance** manages **Financial Controller** (money: invoices, billing, payments).
 - **Technical Lead** manages **Data Analyst**. ERP Capability Advisor has no direct reports.
-- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Brand Designer (visual design), Facility Manager, Trend Analyst, Technical Lead (owns FabricProject161/GitHub work), Finance (taxes/eTAX), Customer Engagement Specialist (mail/comms).
+- Report directly to Grok Bot: Event Program Manager (sole owner of calendar writes), Brand Designer (visual design), Facility Manager, Trend Analyst, Technical Lead (owns GitHubProject161 repo work), Finance (taxes/eTAX), Customer Engagement Specialist (mail/comms).
 
 ## Agents (18)
 
@@ -53,4 +53,4 @@ Redactions in this export (counts only):
 - agent ids: 18
 - device ids / local user paths / login hints: 5
 - home address: 1
-- personal names: 73
+- personal names: 76

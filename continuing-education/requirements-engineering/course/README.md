@@ -51,4 +51,21 @@ Aufgaben: [RE_Uebung_Anmeldung_Aufgaben.md](../marksman-event-registration/RE_Ue
 | 9 – Use Case | 6 | 6 | [09-use-case](09-use-case/) |
 | **Total** | **60** | **60** | |
 
+### Fall 2: Chargenrückverfolgbarkeit im ERP «Bärgmüesli AG» (fiktiv)
+
+Aufgaben: [RE_Uebung_Batch_Traceability_Aufgaben.md](../batch-traceability/RE_Uebung_Batch_Traceability_Aufgaben.md) · Musterlösung: [RE_Uebung_Batch_Traceability_Musterloesung.md](../batch-traceability/RE_Uebung_Batch_Traceability_Musterloesung.md)
+
+| Aufgabe im Fall | Punkte | ≈ Min. | Kursordner |
+|---|---|---|---|
+| 1 – Stakeholderanalyse (mind. ein externer Stakeholder) | 6 | 6 | [01-stakeholder-analysis](01-stakeholder-analysis/) |
+| 2 – Systemkontext und Systemgrenze | 6 | 6 | [02-system-context](02-system-context/) |
+| 3 – Ermittlungstechniken (eine für die Produktion) | 6 | 6 | [03-elicitation-techniques](03-elicitation-techniques/) |
+| 4 – Funktionale Anforderungen (Satzschablone) | 8 | 8 | [04-functional-requirements](04-functional-requirements/) |
+| 5 – Nichtfunktionale Anforderungen (inkl. Rückverfolgungsdauer) | 6 | 6 | [05-non-functional-requirements](05-non-functional-requirements/) |
+| 6 – User Stories mit Abnahmekriterien (inkl. Rückruf) | 10 | 10 | [06-user-stories](06-user-stories/) |
+| 7 – Priorisierung (MoSCoW, Kano) | 5 | 5 | [07-prioritization](07-prioritization/) |
+| 8 – Validierung / Qualitätskriterien | 7 | 7 | [08-validation](08-validation/) |
+| 9 – Use Case «Betroffene Fertigwarenchargen ermitteln und sperren» | 6 | 6 | [09-use-case](09-use-case/) |
+| **Total** | **60** | **60** | |
+
 Weitere Fallstudien kannst du hier mit einer eigenen Zuordnungstabelle ergänzen.
